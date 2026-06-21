@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simply Signature - Order Page</title>
+<style>
+body{font-family:Georgia,serif;background:#f7f3ea;margin:0;color:#1f3f35}
+.container{max-width:700px;margin:auto;padding:20px}
+.card{background:white;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+h1{text-align:center;color:#1f4b3d}
+.section{margin:18px 0;padding:14px;border:1px solid #ddd;border-radius:10px}
+.row{display:flex;justify-content:space-between;align-items:center}
+input,textarea{width:100%;padding:10px;margin-top:6px;border:1px solid #ccc;border-radius:8px}
+.qty{width:70px}
+.total{font-size:28px;font-weight:bold;color:#1f4b3d;text-align:right}
+.btn{display:block;background:#25D366;color:white;text-decoration:none;text-align:center;padding:14px;border-radius:10px;font-weight:bold;margin-top:20px}
+.small{color:#666;font-size:14px}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="card">
+<h1>Simply Signature</h1>
+<p style="text-align:center">Iyengar Style Puliyotharai + Avial</p>
+
+<div class="section">
+<div class="row"><b>Base Order</b><b>₹300</b></div>
+<div class="small">Puliyotharai (~700ml in 750ml container) + Avial (~330ml in 500ml container)</div>
+Qty: <input type="number" id="base" class="qty" value="1" min="0" onchange="calc()">
+</div>
+
+<div class="section">
+<div class="row"><b>Additional Puliyotharai</b><b>₹200</b></div>
+<div class="small">~720ml serving in 750ml container</div>
+Qty: <input type="number" id="puli" class="qty" value="0" min="0" onchange="calc()">
+</div>
+
+<div class="section">
+<div class="row"><b>Additional Avial</b><b>₹100</b></div>
+<div class="small">~330ml serving in 500ml container</div>
+Qty: <input type="number" id="avial" class="qty" value="0" min="0" onchange="calc()">
+</div>
+
+<div class="section">
+<label>Name</label>
+<input id="name">
+<label>Block / Flat</label>
+<input id="flat">
+<label>Phone</label>
+<input id="phone">
+<label>Notes</label>
+<textarea id="notes"></textarea>
+</div>
+
+<div class="total">Total: ₹<span id="total">300</span></div>
+
+<a href="#" class="btn" onclick="order()">Order on WhatsApp</a>
+</div>
+</div>
+
+<script>
+function calc(){
+ let t=(+base.value*300)+(+puli.value*200)+(+avial.value*100);
+ total.innerText=t;
+}
+function order(){
+ calc();
+ let msg=`Hello Simply Signature,%0A%0AName: ${name.value}%0AFlat: ${flat.value}%0APhone: ${phone.value}%0A%0ABase Order x ${base.value}%0AAdditional Puliyotharai x ${puli.value}%0AAdditional Avial x ${avial.value}%0A%0ATotal Amount: ₹${total.innerText}%0A%0ANotes: ${notes.value}`;
+ window.open("https://wa.me/919765844659?text="+msg,"_blank");
+}
+</script>
+</body>
+</html>
