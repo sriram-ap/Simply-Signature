@@ -1,1 +1,288 @@
-<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Simply Signature</title><style>body{font-family:Arial;background:#f6f3ea;margin:0}.hero,.wrap{max-width:1000px;margin:auto;padding:20px}.hero img,.thumb img{width:100%;border-radius:12px}.wrap{display:grid;grid-template-columns:320px 1fr;gap:20px}.card{background:#fff;padding:18px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.15)}@media(max-width:800px){.wrap{grid-template-columns:1fr}}.item{display:flex;justify-content:space-between;margin:10px 0}.qty button{width:30px;height:30px}.qty span{display:inline-block;width:24px;text-align:center}input,textarea{width:100%;padding:8px;margin:6px 0}.btn{display:block;text-align:center;background:#25D366;color:#fff;padding:14px;text-decoration:none;border-radius:8px}.total{text-align:right;font-size:28px}</style></head><body><div class='hero'><img src='a_vertical_restaurant_food_flyer_poster_design_wit.png'></div><div class='wrap'><div class='card thumb'><img src='a_vertical_restaurant_food_flyer_poster_design_wit.png'></div><div class='card'><h2>Order</h2><div class='item'><div>Main Set ₹300</div><div class='qty'><button onclick="chg('m',-1)">-</button><span id='mv'>0</span><button onclick="chg('m',1)">+</button></div></div><div class='item'><div>Kurma ₹200</div><div class='qty'><button onclick="chg('k',-1)">-</button><span id='kv'>0</span><button onclick="chg('k',1)">+</button></div></div><div class='item'><div>Subji ₹100</div><div class='qty'><button onclick="chg('c',-1)">-</button><span id='cv'>0</span><button onclick="chg('c',1)">+</button></div></div><label><input id='p' type='checkbox' onchange='calc()'>Extra 5 Paratha ₹100</label><input id='name' placeholder='Name'><input id='mobile' placeholder='Mobile'><textarea id='addr' placeholder='Address'></textarea><div class='total'>₹<span id='t'>0</span></div><a class='btn' href='#' onclick='wa()'>Order on WhatsApp</a></div></div><script>let q={m:0,k:0,c:0};function chg(x,d){q[x]=Math.max(0,q[x]+d);document.getElementById(x+'v').textContent=q[x];calc()}function calc(){document.getElementById('t').textContent=q.m*300+q.k*200+q.c*100+(document.getElementById('p').checked?100:0)}function wa(){let msg='Hello Gayathri%0AName:'+name.value+'%0AMobile:'+mobile.value+'%0AAddress:'+addr.value+'%0AMain:'+q.m+' Kurma:'+q.k+' Subji:'+q.c+' Extra:'+(p.checked?1:0)+'%0ATotal:₹'+t.textContent;window.open('https://wa.me/919765844659?text='+msg,'_blank')}calc();</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simply Signature | Friday Dinner</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+
+        <div class="brand">
+
+            <div class="veg">🌿 100% Vegetarian</div>
+
+            <h1>Simply Signature</h1>
+
+            <p>Premium Vegetarian • From Gayathri's Kitchen</p>
+
+        </div>
+
+        <div class="event">
+
+            <div class="badge">
+
+                <h2>FRIDAY DINNER</h2>
+
+                <p>03 July 2026</p>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <section class="hero">
+
+        <h2>Friday Special Dinner</h2>
+
+        <p class="subtitle">
+
+            Freshly prepared premium vegetarian dinner.
+
+            Perfect for families.
+
+        </p>
+
+    </section>
+
+
+
+    <section class="menu">
+
+        <h2>Special Combos</h2>
+
+        <table>
+
+            <thead>
+
+            <tr>
+
+                <th>Item</th>
+
+                <th>Includes</th>
+
+                <th>Price</th>
+
+            </tr>
+
+            </thead>
+
+            <tbody>
+
+            <tr>
+
+                <td>
+
+                    <strong>Option 1</strong>
+
+                </td>
+
+                <td>
+
+                    • 400ml Navaratna Kurma (Kashmiri Style)
+
+                    <br>
+
+                    • 200ml Capsicum Subzi (Maharashtrian Style)
+
+                    <br>
+
+                    • 3 Fresh Parathas
+
+                </td>
+
+                <td>
+
+                    ₹350
+
+                </td>
+
+            </tr>
+
+            <tr>
+
+                <td>
+
+                    <strong>Option 2</strong>
+
+                </td>
+
+                <td>
+
+                    • 400ml Navaratna Kurma
+
+                    <br>
+
+                    • 200ml Capsicum Subzi
+
+                </td>
+
+                <td>
+
+                    ₹300
+
+                </td>
+
+            </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+
+    <section class="addons">
+
+        <h2>Add-ons</h2>
+
+        <table>
+
+            <tbody>
+
+            <tr>
+
+                <td>Navaratna Kurma (400ml)</td>
+
+                <td class="price">₹200</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Capsicum Subzi (200ml)</td>
+
+                <td class="price">₹100</td>
+
+            </tr>
+
+            <tr>
+
+                <td>Paratha (each)</td>
+
+                <td class="price">₹20</td>
+
+            </tr>
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+
+
+    <section class="packing">
+
+        <h2>Packing & Delivery</h2>
+
+        <ul>
+
+            <li>Freshly prepared on Friday evening.</li>
+
+            <li>Packed in premium black microwave-safe containers with transparent lids.</li>
+
+            <li>Parathas wrapped separately in aluminium foil.</li>
+
+            <li>Dinner delivery / takeaway between <strong>7:30 PM – 8:00 PM IST</strong>.</li>
+
+            <li>Parathas are handmade in limited quantities. Early ordering is recommended.</li>
+
+        </ul>
+
+    </section>
+
+
+
+    <section class="customer">
+
+        <h2>Customer Details</h2>
+
+        <div class="form">
+
+            <input placeholder="Customer Name">
+
+            <input placeholder="Mobile Number">
+
+            <textarea placeholder="Delivery Address"></textarea>
+
+            <textarea placeholder="Special Instructions"></textarea>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="summary">
+
+        <h2>Order Summary</h2>
+
+<pre>
+
+Option 1 ____________________ ₹350
+
+Option 2 ____________________ ₹300
+
+Kurma (400ml) ______________ ₹200
+
+Capsicum ___________________ ₹100
+
+Paratha _____________________ ₹20 each
+
+----------------------------------------
+
+TOTAL
+
+----------------------------------------
+
+</pre>
+
+    </section>
+
+
+
+    <section class="order">
+
+        <h2>Order on WhatsApp</h2>
+
+        <p>
+
+            📱 9765844659 (Gayathri)
+
+        </p>
+
+        <button>
+
+            PLACE ORDER
+
+        </button>
+
+    </section>
+
+
+
+    <footer>
+
+        <h3>
+
+            Thank you for supporting community home kitchens ❤️
+
+        </h3>
+
+    </footer>
+
+</div>
+
+</body>
+
+</html>
