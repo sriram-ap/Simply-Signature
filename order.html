@@ -1,1 +1,421 @@
-<!doctype html><html><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Simply Signature</title><style>body{font-family:Arial;background:#f6f3ea;margin:0}.hero,.wrap{max-width:1000px;margin:auto;padding:20px}.hero img,.thumb img{width:100%;border-radius:12px}.wrap{display:grid;grid-template-columns:320px 1fr;gap:20px}.card{background:#fff;padding:18px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.15)}@media(max-width:800px){.wrap{grid-template-columns:1fr}}.item{display:flex;justify-content:space-between;margin:10px 0}.qty button{width:30px;height:30px}.qty span{display:inline-block;width:24px;text-align:center}input,textarea{width:100%;padding:8px;margin:6px 0}.btn{display:block;text-align:center;background:#25D366;color:#fff;padding:14px;text-decoration:none;border-radius:8px}.total{text-align:right;font-size:28px}</style></head><body><div class='hero'><img src='a_vertical_restaurant_food_flyer_poster_design_wit.png'></div><div class='wrap'><div class='card thumb'><img src='a_vertical_restaurant_food_flyer_poster_design_wit.png'></div><div class='card'><h2>Order</h2><div class='item'><div>Main Set ₹300</div><div class='qty'><button onclick="chg('m',-1)">-</button><span id='mv'>0</span><button onclick="chg('m',1)">+</button></div></div><div class='item'><div>Kurma ₹200</div><div class='qty'><button onclick="chg('k',-1)">-</button><span id='kv'>0</span><button onclick="chg('k',1)">+</button></div></div><div class='item'><div>Subji ₹100</div><div class='qty'><button onclick="chg('c',-1)">-</button><span id='cv'>0</span><button onclick="chg('c',1)">+</button></div></div><label><input id='p' type='checkbox' onchange='calc()'>Extra 5 Paratha ₹100</label><input id='name' placeholder='Name'><input id='mobile' placeholder='Mobile'><textarea id='addr' placeholder='Address'></textarea><div class='total'>₹<span id='t'>0</span></div><a class='btn' href='#' onclick='wa()'>Order on WhatsApp</a></div></div><script>let q={m:0,k:0,c:0};function chg(x,d){q[x]=Math.max(0,q[x]+d);document.getElementById(x+'v').textContent=q[x];calc()}function calc(){document.getElementById('t').textContent=q.m*300+q.k*200+q.c*100+(document.getElementById('p').checked?100:0)}function wa(){let msg='Hello Gayathri%0AName:'+name.value+'%0AMobile:'+mobile.value+'%0AAddress:'+addr.value+'%0AMain:'+q.m+' Kurma:'+q.k+' Subji:'+q.c+' Extra:'+(p.checked?1:0)+'%0ATotal:₹'+t.textContent;window.open('https://wa.me/919765844659?text='+msg,'_blank')}calc();</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order — Simply Signature | Premium Vegetarian from Gayathri's Kitchen</title>
+<meta name="description" content="Pre-order premium vegetarian Friday dinner from Simply Signature — Gayathri's Kitchen. Navaratna Kurma, Capsicum Subzi, handcrafted parathas. Order on WhatsApp.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://simplysignature.in/order.html">
+<meta property="og:title" content="Simply Signature — Friday Dinner Pre-Order">
+<meta property="og:description" content="Premium vegetarian Friday dinner. Navaratna Kurma, Capsicum Subzi, handcrafted parathas. Order now on WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://simplysignature.in/order.html">
+<meta property="og:image" content="https://simplysignature.in/poster.png">
+<meta property="og:locale" content="en_IN">
+<meta property="og:site_name" content="Simply Signature">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Simply Signature — Friday Dinner Pre-Order">
+<meta name="twitter:description" content="Premium vegetarian Friday dinner from Gayathri's Kitchen. Order now.">
+<meta name="twitter:image" content="https://simplysignature.in/poster.png">
+<meta name="theme-color" content="#1a3a2a">
+<link rel="icon" type="image/png" href="poster.png">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+--emerald:#1a3a2a;--emerald-light:#234d38;--emerald-soft:#2d6b4a;
+--gold:#c9a84c;--gold-light:#ddc06a;--gold-muted:#a8893d;
+--ivory:#faf8f2;--ivory-warm:#f5f0e6;--ivory-dark:#ebe5d6;
+--white:#ffffff;--ink:#1c1c1a;--ink-soft:#3a3a36;--ink-muted:#6b6b63;
+--success:#2d8a56;--error:#c0392b;--error-bg:#fdf2f2;
+--radius:12px;--radius-lg:18px;--radius-xl:24px;
+--shadow-sm:0 1px 3px rgba(26,58,42,0.06);
+--shadow-md:0 4px 16px rgba(26,58,42,0.08);
+--shadow-lg:0 8px 32px rgba(26,58,42,0.12);
+--serif:'Georgia','Palatino Linotype','Book Antiqua',serif;
+--sans:'Segoe UI',system-ui,-apple-system,'Helvetica Neue',sans-serif;
+--ease:cubic-bezier(0.4,0,0.2,1)
+}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{font-family:var(--sans);background:var(--ivory);color:var(--ink);min-height:100vh;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+button{cursor:pointer;font-family:inherit;border:none;background:none}
+input,textarea,select{font-family:inherit;font-size:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+.page{max-width:480px;margin:0 auto;padding:0 0 100px}
+
+/* ── Header ── */
+.hdr{background:var(--emerald);padding:24px 20px 22px;text-align:center;position:relative}
+.hdr::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.hdr__top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px}
+.vb{display:flex;align-items:center;gap:6px}
+.vb__dot{width:22px;height:22px;border:2px solid var(--success);border-radius:4px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.vb__dot::after{content:'';width:10px;height:10px;border-radius:50%;background:var(--success)}
+.vb__txt{font-size:9px;letter-spacing:2px;color:var(--gold-light);text-transform:uppercase;font-weight:600}
+.hdr__logo{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid rgba(201,168,76,0.4)}
+.hdr__est{font-size:10px;letter-spacing:6px;color:var(--gold-muted);text-transform:uppercase;margin-bottom:6px}
+.hdr__brand{font-family:var(--serif);font-size:32px;font-weight:400;color:var(--ivory);letter-spacing:1px;margin-bottom:4px}
+.hdr__brand em{font-style:italic}
+.hdr__brand b{color:var(--gold-light);font-weight:400}
+.hdr__tag{font-size:10px;letter-spacing:3px;color:rgba(250,248,242,0.5);text-transform:uppercase}
+.hdr__ev{margin-top:16px;padding:10px 18px;background:rgba(201,168,76,0.12);border:1px solid rgba(201,168,76,0.25);border-radius:var(--radius);display:inline-flex;flex-direction:column;align-items:center;gap:2px}
+.hdr__ev-lbl{font-size:11px;letter-spacing:3px;color:var(--gold);text-transform:uppercase;font-weight:600}
+.hdr__ev-dt{font-family:var(--serif);font-size:18px;color:var(--ivory);letter-spacing:1px}
+
+/* ── Poster ── */
+.poster{padding:0 16px;margin-top:-1px}
+.poster img{width:100%;border-radius:0 0 var(--radius-xl) var(--radius-xl);box-shadow:var(--shadow-lg)}
+
+/* ── Section ── */
+.sec{padding:20px 16px 0}
+.sec__t{font-family:var(--serif);font-size:20px;color:var(--emerald);font-weight:400;margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--ivory-dark)}
+
+/* ── Form ── */
+.fg{display:flex;flex-direction:column;gap:14px}
+.fl{display:flex;flex-direction:column;gap:5px}
+.fl__lb{font-size:12px;letter-spacing:1.5px;color:var(--ink-muted);text-transform:uppercase;font-weight:600}
+.fl__lb .rq{color:var(--error);margin-left:2px}
+.fl__in{width:100%;border:1.5px solid var(--ivory-dark);border-radius:var(--radius);padding:12px 14px;font-size:15px;color:var(--ink);background:var(--white);transition:border-color .2s var(--ease),box-shadow .2s var(--ease);-webkit-appearance:none;appearance:none}
+.fl__in::placeholder{color:#b5b0a6}
+.fl__in:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,168,76,0.12)}
+.fl__in--err{border-color:var(--error);box-shadow:0 0 0 3px rgba(192,57,43,0.08)}
+.fl__in--ta{resize:vertical;min-height:60px;max-height:140px}
+.fl__err{font-size:11px;color:var(--error);display:none}
+.fl__err--on{display:block}
+
+/* ── Toggle ── */
+.tg{display:flex;gap:8px;width:100%}
+.tg__o{flex:1;position:relative}
+.tg__r{position:absolute;opacity:0;width:0;height:0;pointer-events:none}
+.tg__f{display:flex;align-items:center;justify-content:center;gap:6px;padding:12px 10px;border:1.5px solid var(--ivory-dark);border-radius:var(--radius);font-size:14px;color:var(--ink-soft);background:var(--white);cursor:pointer;transition:all .2s var(--ease);user-select:none;-webkit-tap-highlight-color:transparent}
+.tg__r:checked+.tg__f{border-color:var(--emerald);background:var(--emerald);color:var(--ivory)}
+.tg__r:focus-visible+.tg__f{outline:2px solid var(--gold);outline-offset:2px}
+
+/* ── Menu card ── */
+.mc{background:var(--white);border-radius:var(--radius-lg);padding:20px;margin-bottom:14px;box-shadow:var(--shadow-sm);border:1px solid rgba(0,0,0,0.04);transition:box-shadow .2s var(--ease)}
+.mc:hover{box-shadow:var(--shadow-md)}
+.mc__hd{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px}
+.mc__lbl{font-family:var(--serif);font-size:17px;color:var(--emerald);font-weight:400}
+.mc__pr{font-family:var(--serif);font-size:22px;color:var(--emerald);font-weight:400;white-space:nowrap}
+.mc__pr .cu{font-size:14px;color:var(--gold-muted);margin-right:1px}
+.mc__ul{list-style:none;margin-bottom:14px}
+.mc__ul li{font-size:14px;color:var(--ink-muted);padding:3px 0 3px 18px;position:relative;line-height:1.5}
+.mc__ul li::before{content:'';position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--gold);opacity:0.5}
+
+/* ── Add-on ── */
+.ao{background:var(--white);border-radius:var(--radius);padding:14px 16px;margin-bottom:10px;box-shadow:var(--shadow-sm);border:1px solid rgba(0,0,0,0.04);display:flex;align-items:center;justify-content:space-between;gap:12px}
+.ao__info{flex:1;min-width:0}
+.ao__name{font-size:14px;color:var(--ink);font-weight:500}
+.ao__meta{font-size:12px;color:var(--ink-muted);margin-top:1px}
+
+/* ── Qty control ── */
+.q{display:flex;align-items:center;border:1.5px solid var(--ivory-dark);border-radius:var(--radius);overflow:hidden;flex-shrink:0}
+.q__b{width:38px;height:38px;background:var(--ivory);color:var(--emerald);font-size:20px;display:flex;align-items:center;justify-content:center;transition:background .15s var(--ease);-webkit-tap-highlight-color:transparent;user-select:none;line-height:1}
+.q__b:active{background:var(--ivory-dark)}
+.q__b:disabled{opacity:0.3;cursor:not-allowed}
+.q__v{width:40px;height:38px;text-align:center;font-size:16px;font-weight:600;border:none;border-left:1.5px solid var(--ivory-dark);border-right:1.5px solid var(--ivory-dark);background:var(--white);color:var(--ink);outline:none;-moz-appearance:textfield}
+.q__v::-webkit-outer-spin-button,.q__v::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+
+/* ── Packing ── */
+.pk{background:var(--white);border-radius:var(--radius-lg);padding:18px 20px;box-shadow:var(--shadow-sm);border:1px solid rgba(0,0,0,0.04)}
+.pk__i{font-size:13px;color:var(--ink-muted);padding:4px 0 4px 20px;position:relative;line-height:1.55}
+.pk__i::before{content:'✦';position:absolute;left:0;top:4px;color:var(--gold);font-size:10px}
+.pk__hl{color:var(--emerald);font-weight:600;font-style:italic}
+
+/* ── Summary ── */
+.sm{background:var(--white);border-radius:var(--radius-lg);padding:20px;box-shadow:var(--shadow-md);border:1px solid rgba(0,0,0,0.04)}
+.sm__empty{font-size:14px;color:var(--ink-muted);text-align:center;padding:8px 0;font-style:italic}
+.sm__ln{display:flex;justify-content:space-between;align-items:center;padding:8px 0;font-size:14px;color:var(--ink-soft)}
+.sm__ln+.sm__ln{border-top:1px solid var(--ivory-dark)}
+.sm__ln-lbl{flex:1;min-width:0}
+.sm__ln-pr{font-weight:600;white-space:nowrap;margin-left:12px}
+.sm__tot{display:flex;justify-content:space-between;align-items:center;padding:14px 0 0;margin-top:10px;border-top:2px solid var(--emerald);font-weight:700}
+.sm__tot-lbl{font-size:14px;letter-spacing:1px;text-transform:uppercase;color:var(--emerald)}
+.sm__tot-pr{font-family:var(--serif);font-size:26px;color:var(--emerald)}
+.sm__tot-pr .cu{font-size:16px;color:var(--gold-muted);margin-right:1px}
+
+/* ── CTA ── */
+.cta-w{padding:20px 16px 0}
+.oe{background:var(--error-bg);border:1px solid rgba(192,57,43,0.2);border-radius:var(--radius);padding:10px 14px;font-size:13px;color:var(--error);text-align:center;display:none;margin-bottom:12px}
+.oe--on{display:block}
+.cta{display:flex;align-items:center;justify-content:center;gap:12px;width:100%;padding:18px 24px;border-radius:var(--radius-lg);background:var(--success);color:var(--white);font-size:16px;font-weight:700;letter-spacing:0.5px;box-shadow:0 4px 20px rgba(45,138,86,0.3);transition:transform .15s var(--ease),box-shadow .15s var(--ease);-webkit-tap-highlight-color:transparent;user-select:none}
+.cta:hover{box-shadow:0 6px 28px rgba(45,138,86,0.35)}
+.cta:active{transform:scale(0.98)}
+.cta svg{width:24px;height:24px;fill:var(--white);flex-shrink:0}
+
+/* ── Footer ── */
+.ft{text-align:center;padding:28px 16px 16px;font-size:11px;color:var(--ink-muted);letter-spacing:0.5px;line-height:1.8}
+.ft a{color:var(--gold-muted);text-decoration:none}
+
+/* ── Responsive ── */
+@media(min-width:540px){
+.page{padding-top:24px;padding-bottom:120px}
+.hdr{border-radius:var(--radius-xl) var(--radius-xl) 0 0}
+.poster{padding:0}.poster img{border-radius:0}
+.sec{padding:24px 20px 0}.cta-w{padding:24px 20px 0}
+}
+@media(min-width:768px){.page{max-width:520px}}
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header class="hdr">
+    <div class="hdr__top">
+      <div class="vb"><div class="vb__dot" aria-hidden="true"></div><span class="vb__txt">100% Vegetarian</span></div>
+      <img class="hdr__logo" src="logo.png" alt="Simply Signature" width="42" height="42" onerror="this.style.display='none'">
+    </div>
+    <p class="hdr__est">Est. 2026</p>
+    <h1 class="hdr__brand"><em>Simply </em><b>Signature</b></h1>
+    <p class="hdr__tag">Premium Vegetarian &nbsp;•&nbsp; From Gayathri's Kitchen</p>
+    <div class="hdr__ev">
+      <span class="hdr__ev-lbl">Friday Dinner Special</span>
+      <span class="hdr__ev-dt">03 July 2026</span>
+    </div>
+  </header>
+
+  <div class="poster">
+    <img src="poster.png" alt="This Friday's menu — Navaratna Kurma, Capsicum Subzi and handcrafted Parathas" width="480" height="480" onerror="this.parentElement.style.display='none'">
+  </div>
+
+  <section class="sec" aria-label="Your details">
+    <h2 class="sec__t">Your Details</h2>
+    <div class="fg">
+      <div class="fl">
+        <label class="fl__lb" for="f-name">Full Name <span class="rq">*</span></label>
+        <input class="fl__in" id="f-name" type="text" placeholder="Gayathri Sriram" maxlength="60" autocomplete="name" required>
+        <span class="fl__err" id="e-name" role="alert"></span>
+      </div>
+      <div class="fl">
+        <label class="fl__lb" for="f-mob">Mobile Number <span class="rq">*</span></label>
+        <input class="fl__in" id="f-mob" type="tel" placeholder="98765 43210" maxlength="15" inputmode="tel" autocomplete="tel" required>
+        <span class="fl__err" id="e-mob" role="alert"></span>
+      </div>
+      <div class="fl">
+        <label class="fl__lb" for="f-flat">Flat / Block Number <span class="rq">*</span></label>
+        <input class="fl__in" id="f-flat" type="text" placeholder="A-301" maxlength="30" required>
+        <span class="fl__err" id="e-flat" role="alert"></span>
+      </div>
+      <div class="fl">
+        <label class="fl__lb">Delivery or Takeaway <span class="rq">*</span></label>
+        <div class="tg" role="group" aria-label="Fulfilment type">
+          <label class="tg__o"><input class="tg__r" type="radio" name="ful" value="🛵 Delivery" checked><span class="tg__f">🛵 Delivery</span></label>
+          <label class="tg__o"><input class="tg__r" type="radio" name="ful" value="🏠 Takeaway"><span class="tg__f">🏠 Takeaway</span></label>
+        </div>
+      </div>
+      <div class="fl">
+        <label class="fl__lb" for="f-rem">Remarks</label>
+        <textarea class="fl__in fl__in--ta" id="f-rem" placeholder="Any special requests..." maxlength="200"></textarea>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-label="Today's menu">
+    <h2 class="sec__t">Today's Menu</h2>
+    <div class="mc">
+      <div class="mc__hd"><span class="mc__lbl">Option 1</span><span class="mc__pr"><span class="cu">₹</span>350</span></div>
+      <ul class="mc__ul"><li>Navaratna Kurma — 400ml</li><li>Capsicum Subzi — 200ml</li><li>3 Fresh Parathas</li></ul>
+      <div class="q" role="group" aria-label="Option 1 quantity">
+        <button class="q__b" type="button" data-d="-1" aria-label="Decrease">−</button>
+        <input class="q__v" type="number" min="0" max="8" value="0" inputmode="numeric" data-k="option1" aria-label="Quantity">
+        <button class="q__b" type="button" data-d="1" aria-label="Increase">+</button>
+      </div>
+    </div>
+    <div class="mc">
+      <div class="mc__hd"><span class="mc__lbl">Option 2</span><span class="mc__pr"><span class="cu">₹</span>300</span></div>
+      <ul class="mc__ul"><li>Navaratna Kurma — 400ml</li><li>Capsicum Subzi — 200ml</li></ul>
+      <div class="q" role="group" aria-label="Option 2 quantity">
+        <button class="q__b" type="button" data-d="-1" aria-label="Decrease">−</button>
+        <input class="q__v" type="number" min="0" max="8" value="0" inputmode="numeric" data-k="option2" aria-label="Quantity">
+        <button class="q__b" type="button" data-d="1" aria-label="Increase">+</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-label="Add-ons">
+    <h2 class="sec__t">Add-ons</h2>
+    <div class="ao">
+      <div class="ao__info"><div class="ao__name">Navaratna Kurma</div><div class="ao__meta">400ml · ₹200</div></div>
+      <div class="q" role="group" aria-label="Extra Kurma quantity">
+        <button class="q__b" type="button" data-d="-1" aria-label="Decrease">−</button>
+        <input class="q__v" type="number" min="0" max="8" value="0" inputmode="numeric" data-k="kurma" aria-label="Quantity">
+        <button class="q__b" type="button" data-d="1" aria-label="Increase">+</button>
+      </div>
+    </div>
+    <div class="ao">
+      <div class="ao__info"><div class="ao__name">Capsicum Subzi</div><div class="ao__meta">200ml · ₹100</div></div>
+      <div class="q" role="group" aria-label="Extra Subzi quantity">
+        <button class="q__b" type="button" data-d="-1" aria-label="Decrease">−</button>
+        <input class="q__v" type="number" min="0" max="8" value="0" inputmode="numeric" data-k="capsicum" aria-label="Quantity">
+        <button class="q__b" type="button" data-d="1" aria-label="Increase">+</button>
+      </div>
+    </div>
+    <div class="ao">
+      <div class="ao__info"><div class="ao__name">Paratha</div><div class="ao__meta">₹20 each · Handcrafted</div></div>
+      <div class="q" role="group" aria-label="Extra Paratha quantity">
+        <button class="q__b" type="button" data-d="-1" aria-label="Decrease">−</button>
+        <input class="q__v" type="number" min="0" max="20" value="0" inputmode="numeric" data-k="paratha" aria-label="Quantity">
+        <button class="q__b" type="button" data-d="1" aria-label="Increase">+</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" aria-label="Packing notes">
+    <h2 class="sec__t">Packing Notes</h2>
+    <div class="pk">
+      <p class="pk__i">Freshly prepared Friday evening.</p>
+      <p class="pk__i">Packed in premium black microwave-safe containers with transparent lids.</p>
+      <p class="pk__i">Parathas wrapped individually in aluminium foil.</p>
+      <p class="pk__i"><span class="pk__hl">Limited handcrafted parathas available.</span></p>
+      <p class="pk__i"><span class="pk__hl">Early ordering is recommended.</span></p>
+    </div>
+  </section>
+
+  <section class="sec" aria-label="Order summary">
+    <h2 class="sec__t">Order Summary</h2>
+    <div class="sm" id="sm" aria-live="polite" aria-atomic="true">
+      <p class="sm__empty" id="sm-e">Your order is empty. Select items above.</p>
+      <div id="sm-l"></div>
+      <div class="sm__tot" id="sm-t" style="display:none">
+        <span class="sm__tot-lbl">Grand Total</span>
+        <span class="sm__tot-pr"><span class="cu">₹</span><span id="gt">0</span></span>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-w">
+    <div class="oe" id="oe" role="alert"></div>
+    <button class="cta" id="cta" type="button">
+      <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Place Order on WhatsApp
+    </button>
+  </div>
+
+  <footer class="ft">
+    <p>Simply Signature &nbsp;·&nbsp; Premium Vegetarian</p>
+    <p>From Gayathri's Kitchen &nbsp;·&nbsp; <a href="https://simplysignature.in">simplysignature.in</a></p>
+  </footer>
+
+</div>
+
+<script>
+'use strict';
+
+var MENU={option1:350,option2:300,kurma:200,capsicum:100,paratha:20};
+
+var LABELS={
+option1:'Option 1 (Kurma + Subzi + 3 Parathas)',
+option2:'Option 2 (Kurma + Subzi)',
+kurma:'Navaratna Kurma 400ml',
+capsicum:'Capsicum Subzi 200ml',
+paratha:'Paratha'
+};
+
+var WA='919765844659';
+
+var inp={};
+document.querySelectorAll('.q__v').forEach(function(el){inp[el.dataset.k]=el});
+
+var nm=document.getElementById('f-name'),
+mb=document.getElementById('f-mob'),
+fl=document.getElementById('f-flat'),
+rm=document.getElementById('f-rem'),
+sL=document.getElementById('sm-l'),
+sE=document.getElementById('sm-e'),
+sT=document.getElementById('sm-t'),
+gT=document.getElementById('gt'),
+oe=document.getElementById('oe');
+
+function rd(i){var v=parseInt(i.value,10),mn=parseInt(i.min,10)||0,mx=parseInt(i.max,10)||99;if(isNaN(v)||v<mn)return mn;if(v>mx)return mx;return v}
+
+function sync(i){
+var v=rd(i);i.value=v;
+var p=i.closest('.q'),mn=parseInt(i.min,10)||0,mx=parseInt(i.max,10)||99;
+var b=p.querySelectorAll('.q__b');b[0].disabled=v<=mn;b[1].disabled=v>=mx;
+upd();
+}
+
+document.querySelectorAll('.q').forEach(function(g){
+var i=g.querySelector('.q__v'),b=g.querySelectorAll('.q__b');
+b[0].addEventListener('click',function(){i.value=Math.max(parseInt(i.min,10)||0,rd(i)-1);sync(i)});
+b[1].addEventListener('click',function(){i.value=Math.min(parseInt(i.max,10)||99,rd(i)+1);sync(i)});
+i.addEventListener('input',function(){sync(i)});
+i.addEventListener('blur',function(){sync(i)});
+i.addEventListener('keydown',function(e){
+if(e.key==='ArrowUp'){e.preventDefault();i.value=Math.min(parseInt(i.max,10)||99,rd(i)+1);sync(i)}
+if(e.key==='ArrowDown'){e.preventDefault();i.value=Math.max(parseInt(i.min,10)||0,rd(i)-1);sync(i)}
+});
+sync(i);
+});
+
+function esc(s){var d=document.createElement('span');d.textContent=s;return d.innerHTML}
+
+function tot(){var t=0;Object.keys(MENU).forEach(function(k){t+=rd(inp[k])*MENU[k]});return t}
+
+function upd(){
+var ls=[],t=0;
+Object.keys(MENU).forEach(function(k){
+var q=rd(inp[k]);if(q>0){var s=q*MENU[k];t+=s;ls.push({l:LABELS[k]+' \u00d7'+q,p:s})}
+});
+if(!ls.length){sE.style.display='';sL.innerHTML='';sT.style.display='none';return}
+sE.style.display='none';
+sL.innerHTML=ls.map(function(x){return'<div class="sm__ln"><span class="sm__ln-lbl">'+esc(x.l)+'</span><span class="sm__ln-pr">\u20b9'+x.p.toLocaleString('en-IN')+'</span></div>'}).join('');
+gT.textContent=t.toLocaleString('en-IN');sT.style.display='';
+}
+
+function sfe(i,e,m){i.classList.add('fl__in--err');e.textContent=m;e.classList.add('fl__err--on')}
+function cfe(i,e){i.classList.remove('fl__in--err');e.textContent='';e.classList.remove('fl__err--on')}
+
+[nm,mb,fl].forEach(function(el){
+el.addEventListener('input',function(){
+var eid=el.id==='f-mob'?'e-mob':el.id==='f-name'?'e-name':'e-flat';
+if(el.value.trim().length>0)cfe(el,document.getElementById(eid));
+});
+});
+
+function vld(){
+var ok=true,fb=null;
+var en=document.getElementById('e-name'),em=document.getElementById('e-mob'),ef=document.getElementById('e-flat');
+cfe(nm,en);cfe(mb,em);cfe(fl,ef);oe.classList.remove('oe--on');oe.textContent='';
+
+if(!nm.value.trim()||nm.value.trim().length<2){sfe(nm,en,'Please enter your full name.');if(!fb)fb=nm;ok=false}
+var m=mb.value.replace(/[\s\-\+]/g,'');
+if(!m||m.length<10||!/^\d{10,15}$/.test(m)){sfe(mb,em,'Please enter a valid mobile number.');if(!fb)fb=mb;ok=false}
+if(!fl.value.trim()||fl.value.trim().length<2){sfe(fl,ef,'Please enter your flat or block number.');if(!fb)fb=fl;ok=false}
+if(tot()===0){oe.textContent='Please select at least one item before ordering.';oe.classList.add('oe--on');if(!fb)fb=document.querySelector('.q__v');ok=false}
+if(fb){fb.focus();fb.scrollIntoView({behavior:'smooth',block:'center'})}
+return ok;
+}
+
+function ful(){var el=document.querySelector('input[name="ful"]:checked');return el?el.value:'\ud83d\udeb5 Delivery'}
+
+function msg(){
+var l=[];
+l.push('Hello Gayathri,');l.push('');
+l.push("I'd like to place an order.");l.push('');
+l.push('*Customer*');
+l.push('Name: '+nm.value.trim());
+l.push('Mobile: '+mb.value.trim());
+l.push('Flat: '+fl.value.trim());
+l.push('Fulfilment: '+ful());
+var r=rm.value.trim();if(r)l.push('Remarks: '+r);
+l.push('');l.push('*Order*');
+Object.keys(MENU).forEach(function(k){
+var q=rd(inp[k]);
+if(q>0)l.push(LABELS[k]+' \u00d7'+q+' \u2014 \u20b9'+(q*MENU[k]).toLocaleString('en-IN'));
+});
+l.push('');l.push('*Grand Total: \u20b9'+tot().toLocaleString('en-IN')+'*');
+l.push('');l.push('Thank you.');
+return l.join('\n');
+}
+
+document.getElementById('cta').addEventListener('click',function(){
+if(!vld())return;
+window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg()),'_blank','noopener,noreferrer');
+});
+</script>
+</body>
+</html>
