@@ -1,0 +1,61 @@
+{
+  "orderingOpen": true,
+  "service": {
+    "day": "Sunday",
+    "meal": "Lunch",
+    "deliveryDate": "2026-07-19",
+    "deliveryWindow": "12:30 PM – 1:30 PM IST",
+    "orderBy": "Saturday, 18 July 2026 · 9:00 PM IST"
+  },
+  "special": {
+    "name": "Navaratna Kurma (Kashmiri Style) + Capsicum Subzi (Maharashtrian Style)",
+    "shortName": "Navaratna Kurma Combo",
+    "description": "A royal nine-treasure kurma simmered in a saffron-cashew gravy, paired with a rustic groundnut-capsicum subzi and soft, hand-rolled parathas.",
+    "poster": "/assets/posters/2026-07-05-navaratna-kurma.png",
+    "posterAlt": "Simply Signature weekly poster: Navaratna Kurma (Kashmiri style) with Capsicum Subzi (Maharashtrian style) and parathas — Sunday lunch, order on WhatsApp",
+    "posterWidth": 1672,
+    "posterHeight": 941
+  },
+  "portionsNote": "Prepared in limited quantities — only 10 portions this week — to maintain freshness and quality.",
+  "items": [
+    {
+      "id": "main-set",
+      "name": "Main Set",
+      "detail": "Navaratna Kurma ~500 ml + Capsicum Subzi 250 ml + 2 Parathas",
+      "price": 300,
+      "kind": "main"
+    },
+    {
+      "id": "extra-kurma",
+      "name": "Navaratna Kurma (~500 ml)",
+      "detail": "Kashmiri style, saffron-cashew gravy",
+      "price": 200,
+      "kind": "addon"
+    },
+    {
+      "id": "extra-subzi",
+      "name": "Capsicum Subzi (250 ml)",
+      "detail": "Maharashtrian style, groundnut + capsicum",
+      "price": 100,
+      "kind": "addon"
+    },
+    {
+      "id": "extra-paratha",
+      "name": "Extra 5 Parathas",
+      "detail": "Soft, hand-rolled — max 1 per order",
+      "price": 100,
+      "kind": "addon",
+      "maxQty": 1
+    }
+  ],
+  "whatsapp": {
+    "number": "919765844659",
+    "display": "+91 97658 44659",
+    "contactName": "Gayathri"
+  },
+  "community": {
+    "name": "Jal Vayu Towers (JVT)",
+    "flatLabel": "Block / Flat No"
+  },
+  "mygateMessage": "🌿 Simply Signature — Sunday Lunch, 19 July 2026 🌿\n\nThis week: Navaratna Kurma (Kashmiri Style) + Capsicum Subzi (Maharashtrian Style) with soft parathas.\n\nMain Set ₹300 · Add-ons available.\n100% vegetarian, homemade in small batches at JVT-343.\n\nOrder before Saturday 9:00 PM on WhatsApp: +91 97658 44659 (Gayathri)\nOr order online: https://simplysignature.in/order\n\nThank you for supporting community home kitchens! 💛"
+}
