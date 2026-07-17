@@ -5,9 +5,8 @@ import { Reveal } from "@/components/reveal";
 import { dishes, type Dish } from "@/data/dishes";
 
 export const metadata: Metadata = {
-  title: "Menu — 12 Signature Vegetarian Dishes",
-  description:
-    "The Simply Signature dish library: 12 homestyle vegetarian dishes from across India — from Iyengar Puliyodarai to Andhra-style biryani. Each weekend's special is chosen from this menu.",
+  title: `Menu — ${dishes.length} Signature Vegetarian Dishes`,
+  description: `The Simply Signature dish library: ${dishes.length} homestyle vegetarian dishes from across India — from Iyengar Puliyodarai to Andhra-style biryani. Each weekend's special is chosen from this menu.`,
   alternates: { canonical: "/menu" },
 };
 
@@ -28,7 +27,7 @@ export default function MenuPage() {
             The Signature Menu
           </p>
           <h1 className="mt-4 font-display text-4xl font-semibold leading-tight sm:text-5xl">
-            Twelve dishes,
+            {dishes.length} dishes,
             <em className="font-light italic text-gold-300"> perfected at home</em>
           </h1>
           <p className="mx-auto mt-5 max-w-xl leading-relaxed text-cream/80">

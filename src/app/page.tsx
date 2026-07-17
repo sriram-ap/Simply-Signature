@@ -71,23 +71,41 @@ export default function HomePage() {
           </div>
 
           <Reveal delay={0.15}>
-            <figure className="relative rounded-2xl border border-gold-500/25 bg-evergreen-900/60 p-3 shadow-card-hover">
-              <Image
-                src={menu.special.poster}
-                alt={menu.special.posterAlt}
-                width={menu.special.posterWidth}
-                height={menu.special.posterHeight}
-                priority
-                sizes="(max-width: 1024px) 100vw, 45vw"
-                className="w-full rounded-xl"
-              />
-              <figcaption className="flex items-center justify-between gap-3 px-2 pb-1 pt-3 text-xs text-cream/70">
-                <span>
-                  This {menu.service.day} · {menu.special.shortName}
-                </span>
-                <span className="text-gold-400">{deliveryDateLabel(menu)}</span>
-              </figcaption>
-            </figure>
+            {menu.special.poster ? (
+              <figure className="relative rounded-2xl border border-gold-500/25 bg-evergreen-900/60 p-3 shadow-card-hover">
+                <Image
+                  src={menu.special.poster}
+                  alt={menu.special.posterAlt}
+                  width={menu.special.posterWidth}
+                  height={menu.special.posterHeight}
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                  className="w-full rounded-xl"
+                />
+                <figcaption className="flex items-center justify-between gap-3 px-2 pb-1 pt-3 text-xs text-cream/70">
+                  <span>
+                    This {menu.service.day} · {menu.special.shortName}
+                  </span>
+                  <span className="text-gold-400">{deliveryDateLabel(menu)}</span>
+                </figcaption>
+              </figure>
+            ) : (
+              <div className="relative rounded-2xl border border-gold-500/25 bg-evergreen-900/60 p-8 text-center shadow-card-hover sm:p-10">
+                <p className="text-xs font-semibold uppercase tracking-[0.24em] text-gold-400">
+                  This {menu.service.day} · {menu.service.meal}
+                </p>
+                <p className="mt-4 font-display text-3xl font-semibold leading-tight text-cream">
+                  {menu.special.name}
+                </p>
+                <p className="mt-4 text-sm leading-relaxed text-cream/75">
+                  {menu.special.description}
+                </p>
+                <p className="mt-6 text-sm text-gold-300">
+                  {deliveryDateLabel(menu)} · {menu.service.deliveryWindow}
+                </p>
+                <p className="mt-2 text-xs italic text-cream/60">{menu.portionsNote}</p>
+              </div>
+            )}
           </Reveal>
         </div>
       </section>
@@ -114,7 +132,13 @@ export default function HomePage() {
 
       {/* ── This week ────────────────────────────────────────── */}
       <section aria-labelledby="week-heading" className="bg-evergreen-900 text-cream">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 sm:px-6 md:py-20 lg:grid-cols-2">
+        <div
+          className={
+            menu.special.poster
+              ? "mx-auto grid max-w-6xl items-center gap-10 px-4 py-16 sm:px-6 md:py-20 lg:grid-cols-2"
+              : "mx-auto max-w-3xl px-4 py-16 sm:px-6 md:py-20"
+          }
+        >
           <Reveal>
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-gold-400">
@@ -142,7 +166,7 @@ export default function HomePage() {
                     <ChefHat className="size-4 text-gold-400" aria-hidden />
                     <dt className="sr-only">Price</dt>
                     <dd>
-                      Main Set {formatINR(mainItem.price)} — {mainItem.detail}
+                      {mainItem.name} {formatINR(mainItem.price)} — {mainItem.detail}
                     </dd>
                   </div>
                 )}
@@ -164,16 +188,18 @@ export default function HomePage() {
               </div>
             </div>
           </Reveal>
-          <Reveal delay={0.1}>
-            <Image
-              src={menu.special.poster}
-              alt={menu.special.posterAlt}
-              width={menu.special.posterWidth}
-              height={menu.special.posterHeight}
-              sizes="(max-width: 1024px) 100vw, 45vw"
-              className="w-full rounded-2xl border border-gold-500/25 shadow-card-hover"
-            />
-          </Reveal>
+          {menu.special.poster && (
+            <Reveal delay={0.1}>
+              <Image
+                src={menu.special.poster}
+                alt={menu.special.posterAlt}
+                width={menu.special.posterWidth}
+                height={menu.special.posterHeight}
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                className="w-full rounded-2xl border border-gold-500/25 shadow-card-hover"
+              />
+            </Reveal>
+          )}
         </div>
       </section>
 
@@ -231,7 +257,7 @@ export default function HomePage() {
                   From the signature menu
                 </h2>
                 <p className="mt-3 max-w-lg text-ink-soft">
-                  Twelve dishes we&rsquo;ve perfected at home — each weekend&rsquo;s
+                  The dishes we&rsquo;ve perfected at home — each weekend&rsquo;s
                   special is chosen from this list.
                 </p>
               </div>
@@ -239,7 +265,7 @@ export default function HomePage() {
                 href="/menu"
                 className="inline-flex h-11 items-center rounded-full border border-evergreen-300 px-6 text-sm font-medium text-evergreen-900 transition-colors hover:border-evergreen-600 hover:bg-evergreen-50"
               >
-                See all 12 dishes
+                See all {dishes.length} dishes
               </Link>
             </div>
           </Reveal>

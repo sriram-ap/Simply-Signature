@@ -13,7 +13,7 @@ Live site: **https://simplysignature.in**
 - Presents the weekly special (one curated menu per weekend service).
 - Lets customers build an order and send it as a **pre-filled WhatsApp message** — no backend, no database, no login.
 - Generates a copyable **MyGate-friendly announcement** for community posting.
-- Showcases the 12-dish signature menu with full provenance (origin, ingredients, technique, spice level, digestion notes).
+- Showcases the signature dish library with full provenance (origin, ingredients, technique, spice level, digestion notes).
 - Fully static: every page is pre-rendered at build time. The weekly menu lives in one JSON file.
 
 ## Tech stack

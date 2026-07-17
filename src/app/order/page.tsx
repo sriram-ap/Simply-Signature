@@ -17,7 +17,13 @@ export default function OrderPage() {
     <>
       <section className="bg-evergreen-950 text-cream">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 md:py-16">
-          <div className="grid items-center gap-8 lg:grid-cols-[1.2fr_1fr]">
+          <div
+            className={
+              menu.special.poster
+                ? "grid items-center gap-8 lg:grid-cols-[1.2fr_1fr]"
+                : "max-w-3xl"
+            }
+          >
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-gold-400">
                 {menu.service.day} {menu.service.meal} · {dateLabel}
@@ -25,6 +31,11 @@ export default function OrderPage() {
               <h1 className="mt-3 font-display text-3xl font-semibold leading-tight sm:text-4xl">
                 {menu.special.name}
               </h1>
+              {menu.special.tagline && (
+                <p className="mt-3 text-xs font-semibold uppercase tracking-[0.2em] text-gold-300">
+                  {menu.special.tagline}
+                </p>
+              )}
               <p className="mt-4 max-w-xl leading-relaxed text-cream/80">
                 {menu.special.description}
               </p>

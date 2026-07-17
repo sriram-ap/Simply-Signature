@@ -1,51 +1,52 @@
 {
   "orderingOpen": true,
   "service": {
-    "day": "Sunday",
+    "day": "Saturday",
     "meal": "Lunch",
-    "deliveryDate": "2026-07-19",
+    "deliveryDate": "2026-07-18",
     "deliveryWindow": "12:30 PM – 1:30 PM IST",
-    "orderBy": "Saturday, 18 July 2026 · 9:00 PM IST"
+    "orderBy": "Friday, 17 July 2026 · 9:00 PM IST"
   },
   "special": {
-    "name": "Navaratna Kurma (Kashmiri Style) + Capsicum Subzi (Maharashtrian Style)",
-    "shortName": "Navaratna Kurma Combo",
-    "description": "A royal nine-treasure kurma simmered in a saffron-cashew gravy, paired with a rustic groundnut-capsicum subzi and soft, hand-rolled parathas.",
-    "poster": "/assets/posters/2026-07-05-navaratna-kurma.png",
-    "posterAlt": "Simply Signature weekly poster: Navaratna Kurma (Kashmiri style) with Capsicum Subzi (Maharashtrian style) and parathas — Sunday lunch, order on WhatsApp",
-    "posterWidth": 1672,
-    "posterHeight": 941
+    "name": "Thecha Bhaat + Maharashtrian Misal",
+    "shortName": "Thecha Bhaat & Misal Combo",
+    "tagline": "Premium Vegetarian • Home Cooked • Restaurant Relished Experience",
+    "description": "Fiery, hand-pounded green-chilli–garlic thecha folded through ghee-laced rice, alongside a robust Maharashtrian misal crowned with crunchy farsan — finished with two soft pav. Maharashtra's boldest comfort food, made the home way.",
+    "_todo": "POSTER PENDING: export this week's poster as public/assets/posters/2026-07-18-thecha-bhaat-misal.png, then set poster to /assets/posters/2026-07-18-thecha-bhaat-misal.png and fill posterWidth/posterHeight with its pixel size. Pages render a branded text layout until then.",
+    "poster": "",
+    "posterAlt": "",
+    "posterWidth": 0,
+    "posterHeight": 0
   },
-  "portionsNote": "Prepared in limited quantities — only 10 portions this week — to maintain freshness and quality.",
+  "portionsNote": "Prepared in limited quantities — only 10–12 portions this week — to maintain freshness and quality.",
   "items": [
     {
-      "id": "main-set",
-      "name": "Main Set",
-      "detail": "Navaratna Kurma ~500 ml + Capsicum Subzi 250 ml + 2 Parathas",
-      "price": 300,
+      "id": "main-combo",
+      "name": "Main Combo",
+      "detail": "Thecha Bhaat + Maharashtrian Misal + 2 Pav",
+      "price": 350,
       "kind": "main"
     },
     {
-      "id": "extra-kurma",
-      "name": "Navaratna Kurma (~500 ml)",
-      "detail": "Kashmiri style, saffron-cashew gravy",
+      "id": "thecha-bhaat-500",
+      "name": "Thecha Bhaat (500 ml)",
+      "detail": "Hand-pounded green chilli–garlic thecha rice, 100% vegetarian",
       "price": 200,
       "kind": "addon"
     },
     {
-      "id": "extra-subzi",
-      "name": "Capsicum Subzi (250 ml)",
-      "detail": "Maharashtrian style, groundnut + capsicum",
-      "price": 100,
+      "id": "misal-pav-250",
+      "name": "Misal + 2 Pav (250 ml)",
+      "detail": "Maharashtrian misal with kat and farsan, two soft pav",
+      "price": 150,
       "kind": "addon"
     },
     {
-      "id": "extra-paratha",
-      "name": "Extra 5 Parathas",
-      "detail": "Soft, hand-rolled — max 1 per order",
-      "price": 100,
-      "kind": "addon",
-      "maxQty": 1
+      "id": "buttered-pav",
+      "name": "Buttered Pav",
+      "detail": "Per piece, toasted golden in butter",
+      "price": 20,
+      "kind": "addon"
     }
   ],
   "whatsapp": {
@@ -57,5 +58,5 @@
     "name": "Jal Vayu Towers (JVT)",
     "flatLabel": "Block / Flat No"
   },
-  "mygateMessage": "🌿 Simply Signature — Sunday Lunch, 19 July 2026 🌿\n\nThis week: Navaratna Kurma (Kashmiri Style) + Capsicum Subzi (Maharashtrian Style) with soft parathas.\n\nMain Set ₹300 · Add-ons available.\n100% vegetarian, homemade in small batches at JVT-343.\n\nOrder before Saturday 9:00 PM on WhatsApp: +91 97658 44659 (Gayathri)\nOr order online: https://simplysignature.in/order\n\nThank you for supporting community home kitchens! 💛"
+  "mygateMessage": "🌶️ Simply Signature — Saturday Lunch, 18 July 2026 🌶️\n\nThis week: Thecha Bhaat + Maharashtrian Misal with soft pav — a full Maharashtrian feast.\n\nMain Combo ₹350 (Thecha Bhaat + Misal + 2 Pav)\nThecha Bhaat 500 ml ₹200 · Misal + 2 Pav ₹150 · Buttered Pav ₹20 each\nOnly 10–12 portions this week!\n\n100% vegetarian, homemade in small batches at JVT-343.\nOrder before Friday 9:00 PM on WhatsApp: +91 97658 44659 (Gayathri)\nOr order online: https://simplysignature.in/order\n\nPremium Vegetarian • Home Cooked • Restaurant Relished 💛"
 }

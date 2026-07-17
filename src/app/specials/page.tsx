@@ -29,6 +29,11 @@ export default function SpecialsPage() {
           <h1 className="mt-5 font-display text-3xl font-semibold leading-tight sm:text-5xl">
             {menu.special.name}
           </h1>
+          {menu.special.tagline && (
+            <p className="mt-4 text-xs font-semibold uppercase tracking-[0.2em] text-gold-300">
+              {menu.special.tagline}
+            </p>
+          )}
           <p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-cream/80">
             {menu.special.description}
           </p>
@@ -36,24 +41,32 @@ export default function SpecialsPage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6 md:py-20">
-        <div className="grid gap-10 lg:grid-cols-[1.15fr_1fr]">
-          <Reveal>
-            <figure className="overflow-hidden rounded-2xl border border-evergreen-900/10 bg-cream-soft p-3 shadow-card-hover">
-              <Image
-                src={menu.special.poster}
-                alt={menu.special.posterAlt}
-                width={menu.special.posterWidth}
-                height={menu.special.posterHeight}
-                priority
-                sizes="(max-width: 1024px) 100vw, 55vw"
-                className="w-full rounded-xl"
-              />
-              <figcaption className="px-2 pb-1 pt-3 text-xs text-ink-soft">
-                This week&rsquo;s poster — save it, share it, forward it to a hungry
-                neighbour.
-              </figcaption>
-            </figure>
-          </Reveal>
+        <div
+          className={
+            menu.special.poster
+              ? "grid gap-10 lg:grid-cols-[1.15fr_1fr]"
+              : "mx-auto max-w-2xl"
+          }
+        >
+          {menu.special.poster && (
+            <Reveal>
+              <figure className="overflow-hidden rounded-2xl border border-evergreen-900/10 bg-cream-soft p-3 shadow-card-hover">
+                <Image
+                  src={menu.special.poster}
+                  alt={menu.special.posterAlt}
+                  width={menu.special.posterWidth}
+                  height={menu.special.posterHeight}
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 55vw"
+                  className="w-full rounded-xl"
+                />
+                <figcaption className="px-2 pb-1 pt-3 text-xs text-ink-soft">
+                  This week&rsquo;s poster — save it, share it, forward it to a hungry
+                  neighbour.
+                </figcaption>
+              </figure>
+            </Reveal>
+          )}
 
           <div className="space-y-6">
             <Reveal>

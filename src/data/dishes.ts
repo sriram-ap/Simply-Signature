@@ -206,6 +206,32 @@ export const dishes: Dish[] = [
     image: null,
   },
   {
+    slug: "maharashtrian-misal",
+    name: "Maharashtrian Misal",
+    origin: "Maharashtra (Kolhapur & Pune traditions)",
+    category: "Street Classics",
+    description:
+      "The crowned king of Maharashtrian street food: sprouted moth beans simmered in a robust, freshly ground kat — a spiced coconut-chilli gravy — layered with crunchy farsan, onion, coriander and lemon, and served with two soft pav. All the drama of a misal house, none of the oil slick.",
+    ingredients: [
+      "Sprouted matki (moth beans)",
+      "Kat: dry coconut, byadgi chilli, goda masala",
+      "Farsan (crunchy topping)",
+      "Onion, coriander, lemon",
+      "2 soft pav",
+    ],
+    technique:
+      "Beans are sprouted in-house and simmered whole so they hold their bite; the kat is built on a masala roasted and ground the same morning. Misal is assembled in layers only at serving time, so the farsan lands crunchy, never soggy.",
+    spiceLevel: "Medium–Hot",
+    bestServedWith: "Soft pav, extra kat on the side, and a glass of buttermilk to cool down.",
+    whyHomely:
+      "Misal is Maharashtra's Sunday-morning ritual — ours tastes of the famous misal houses of Kolhapur and Pune, made in a home kitchen for neighbours.",
+    whyHealthy:
+      "Sprouted beans are one of India's great plant-protein sources, with vitamins multiplied by sprouting; the toppings add texture, not grease.",
+    whyEasyOnDigestion:
+      "Well-simmered sprouts are far gentler than un-sprouted pulses, and the tarri (oil layer) is kept deliberately restrained.",
+    image: null,
+  },
+  {
     slug: "paneer-butter-masala",
     name: "Paneer Butter Masala",
     origin: "Punjab / Delhi, North India",
@@ -232,12 +258,12 @@ export const dishes: Dish[] = [
     image: null,
   },
   {
-    slug: "thecha-rice",
-    name: "Thecha Bhaat (Thecha Rice)",
+    slug: "thecha-bhaat",
+    name: "Thecha Bhaat",
     origin: "Rural Maharashtra (Khandesh & Western Maharashtra)",
     category: "Rice & One-Pot",
     description:
-      "Steamed rice folded through freshly pounded green-chilli–garlic thecha with roasted groundnuts and ghee — the fiery, rustic soul of the Maharashtrian countryside in a bowl. (Often spelt 'thaicha'; the authentic Marathi name is ठेचा — thecha.)",
+      "Steamed rice folded through freshly pounded green-chilli–garlic thecha with roasted groundnuts and ghee — the fiery, rustic soul of the Maharashtrian countryside in a bowl. (Also known as Thecha Rice; the authentic Marathi name is ठेचा — thecha.)",
     ingredients: [
       "Steamed rice",
       "Green chillies & garlic, flame-roasted",

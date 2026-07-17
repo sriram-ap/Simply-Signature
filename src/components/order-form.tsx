@@ -317,7 +317,7 @@ export function OrderForm({
           <CardContent className="space-y-4">
             {lines.length === 0 ? (
               <p className="rounded-xl bg-cream-deep/60 p-4 text-sm text-ink-soft">
-                Nothing here yet — add the Main Set to begin.
+                Nothing here yet — add the {mains[0]?.name ?? "main item"} to begin.
               </p>
             ) : (
               <ul className="space-y-2.5">

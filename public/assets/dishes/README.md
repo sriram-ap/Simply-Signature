@@ -1,6 +1,6 @@
 # Dish photographs
 
-Real photos of the 12 signature dishes. Until a photo exists for a dish, the site
+Real photos of the signature dishes. Until a photo exists for a dish, the site
 shows a branded placeholder (gradient + icon) — **by design, we never use stock or
 AI-generated food imagery.**
 
@@ -23,8 +23,9 @@ AI-generated food imagery.**
    | Pepper Paneer Dry | `pepper-paneer-dry.jpg` |
    | Pepper Baby Corn Dry | `pepper-baby-corn-dry.jpg` |
    | Usal Pav | `usal-pav.jpg` |
+   | Maharashtrian Misal | `maharashtrian-misal.jpg` |
    | Paneer Butter Masala | `paneer-butter-masala.jpg` |
-   | Thecha Bhaat | `thecha-rice.jpg` |
+   | Thecha Bhaat | `thecha-bhaat.jpg` |
    | Kids' Friendly Pasta | `kids-friendly-pasta.jpg` |
    | Bisi Bele Bath | `bisi-bele-bath.jpg` |
    | Andhra Veg Biryani | `andhra-veg-biryani.jpg` |

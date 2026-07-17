@@ -24,7 +24,7 @@ export interface WeeklyMenu {
   service: {
     day: string;
     meal: string;
-    /** ISO date of delivery, e.g. "2026-07-19". */
+    /** ISO date of delivery, e.g. "2026-07-18". */
     deliveryDate: string;
     deliveryWindow: string;
     orderBy: string;
@@ -32,6 +32,8 @@ export interface WeeklyMenu {
   special: {
     name: string;
     shortName: string;
+    /** Optional promotional line shown on the specials and order pages. */
+    tagline?: string;
     description: string;
     /** Public path under /assets/posters/, or "" to hide the poster. */
     poster: string;

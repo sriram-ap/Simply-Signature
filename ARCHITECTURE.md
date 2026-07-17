@@ -29,7 +29,7 @@ Every route is static (`○`/`●` in the build output):
 | --- | --- |
 | `/` | `menu.json` + `dishes.ts` + `site.ts` |
 | `/specials`, `/order` | `menu.json` |
-| `/menu`, `/menu/[slug]` (×12, `generateStaticParams`) | `dishes.ts` |
+| `/menu`, `/menu/[slug]` (one per dish, `generateStaticParams`) | `dishes.ts` |
 | `/gallery` | `gallery.json` |
 | `/reviews` | `reviews.json` |
 | `/faq` | `faqs.ts` |
@@ -67,7 +67,7 @@ shadcn/ui conventions are followed (cva variants + `cn()` merge) without the Rad
 
 - Per-page `metadata` exports with canonical URLs; global template in `layout.tsx`.
 - `Restaurant` JSON-LD (layout), `MenuItem` JSON-LD (dish pages), `FAQPage` JSON-LD (FAQ).
-- `robots.ts`, `sitemap.ts` (all 21 URLs), `manifest.ts`, and a build-time generated Open Graph image (`opengraph-image.tsx`, 1200×630).
+- `robots.ts`, `sitemap.ts` (every page + dish URL, derived from `dishes.ts`), `manifest.ts`, and a build-time generated Open Graph image (`opengraph-image.tsx`, 1200×630).
 
 ## Accessibility
 

@@ -23,11 +23,11 @@ The file is validated at build time: if a required field is missing or malformed
 
 ```json
 "service": {
-  "day": "Sunday",                          // Weekday name, shown as "This Sunday"
+  "day": "Saturday",                        // Weekday name, shown as "This Saturday"
   "meal": "Lunch",                          // Lunch / Dinner
-  "deliveryDate": "2026-07-19",             // ISO date — used to render the long date
+  "deliveryDate": "2026-07-18",             // ISO date — used to render the long date
   "deliveryWindow": "12:30 PM – 1:30 PM IST",
-  "orderBy": "Saturday, 18 July 2026 · 9:00 PM IST"   // Free text, shown verbatim
+  "orderBy": "Friday, 17 July 2026 · 9:00 PM IST"   // Free text, shown verbatim
 }
 ```
 
@@ -35,13 +35,14 @@ The file is validated at build time: if a required field is missing or malformed
 
 ```json
 "special": {
-  "name": "Navaratna Kurma (Kashmiri Style) + Capsicum Subzi",   // Full headline
-  "shortName": "Navaratna Kurma Combo",                          // Compact contexts
+  "name": "Thecha Bhaat + Maharashtrian Misal",                  // Full headline
+  "shortName": "Thecha Bhaat & Misal Combo",                     // Compact contexts
+  "tagline": "Premium Vegetarian • Home Cooked",                 // OPTIONAL promo line
   "description": "One appetising sentence.",
-  "poster": "/assets/posters/2026-07-05-navaratna-kurma.png",    // Path under public/
+  "poster": "/assets/posters/2026-07-18-thecha-bhaat-misal.png", // Path under public/
   "posterAlt": "Describe the poster for screen readers & SEO",
-  "posterWidth": 1672,                                           // Pixel dimensions of
-  "posterHeight": 941                                            // the poster file
+  "posterWidth": 1080,                                           // Pixel dimensions of
+  "posterHeight": 2350                                           // the poster file
 }
 ```
 
@@ -57,7 +58,7 @@ Each entry is one row on the order page:
 {
   "id": "main-set",            // Unique, stable, kebab-case. Never reuse across different products.
   "name": "Main Set",          // Shown in bold + in the WhatsApp message
-  "detail": "Kurma ~500 ml + Subzi 250 ml + 2 Parathas",
+  "detail": "Thecha Bhaat + Maharashtrian Misal + 2 Pav",
   "price": 300,                // Whole rupees, no symbol
   "kind": "main",              // "main" = featured first · "addon" = listed under Add-ons
   "maxQty": 1                  // OPTIONAL per-order cap (omit for unlimited)
