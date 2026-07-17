@@ -85,9 +85,9 @@ export const dishes: Dish[] = [
       "White pepper and cardamom instead of chilli heat, and a milk-cashew base that is far lighter than cream-flour gravies.",
     image: "/assets/dishes/navaratna-kurma.webp",
     imageCredit: {
-      author: "Miansari66",
-      license: "CC0 1.0",
-      url: "https://commons.wikimedia.org/wiki/File:Navratan_Korma_(Mughal_Kitchen).JPG",
+      author: "ShootSaga",
+      license: "Pexels License",
+      url: "https://www.pexels.com/photo/33430561/",
     },
   },
   {
@@ -274,9 +274,9 @@ export const dishes: Dish[] = [
       "Mild spicing, no onion-garlic overload, and a strained gravy that is famously gentle — a favourite for kids and elders alike.",
     image: "/assets/dishes/paneer-butter-masala.webp",
     imageCredit: {
-      author: "Gannu03",
-      license: "CC BY-SA 4.0",
-      url: "https://commons.wikimedia.org/wiki/File:Paneer_butter_masala_3.jpg",
+      author: "Dhiraj Jain",
+      license: "Pexels License",
+      url: "https://www.pexels.com/photo/12737805/",
     },
   },
   {
@@ -390,9 +390,9 @@ export const dishes: Dish[] = [
       "Mint, curd and raita are built-in coolants; the dum method cooks everything through gently and thoroughly.",
     image: "/assets/dishes/andhra-veg-biryani.webp",
     imageCredit: {
-      author: "Phadke09",
-      license: "CC BY-SA 4.0",
-      url: "https://commons.wikimedia.org/wiki/File:Vegetable_Biryani_IMG_001.jpg",
+      author: "Ahmad",
+      license: "Pexels License",
+      url: "https://www.pexels.com/photo/7593267/",
     },
   },
 ];
