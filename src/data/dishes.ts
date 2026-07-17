@@ -22,6 +22,8 @@ export interface Dish {
   whyEasyOnDigestion: string;
   /** Public path under /assets/dishes/, or null to show the branded placeholder. */
   image: string | null;
+  /** Photographer attribution — required for CC-licensed photos. See IMAGE-CREDITS.md. */
+  imageCredit?: { author: string; license: string; url: string };
 }
 
 export const dishes: Dish[] = [
@@ -50,7 +52,12 @@ export const dishes: Dish[] = [
       "Tamarind and sesame oil bring antioxidants and good fats; avial packs six or more vegetables into a single serving with no cream.",
     whyEasyOnDigestion:
       "Tamarind and buttermilk-based dishes are naturally cooling and probiotic-friendly; the spice sits in flavour, not in heat.",
-    image: null,
+    image: "/assets/dishes/iyengar-puliyodarai-avial.webp",
+    imageCredit: {
+      author: "Talupu",
+      license: "CC BY-SA 4.0",
+      url: "https://commons.wikimedia.org/wiki/File:Tamarind_Rice_(Puliyogare).jpg",
+    },
   },
   {
     slug: "navaratna-kurma",
@@ -76,7 +83,12 @@ export const dishes: Dish[] = [
       "A full rainbow of vegetables plus protein from paneer and cashews; sweetness comes from fruit and nuts, not sugar syrup.",
     whyEasyOnDigestion:
       "White pepper and cardamom instead of chilli heat, and a milk-cashew base that is far lighter than cream-flour gravies.",
-    image: null,
+    image: "/assets/dishes/navaratna-kurma.webp",
+    imageCredit: {
+      author: "Miansari66",
+      license: "CC0 1.0",
+      url: "https://commons.wikimedia.org/wiki/File:Navratan_Korma_(Mughal_Kitchen).JPG",
+    },
   },
   {
     slug: "capsicum-shengdana-subzi",
@@ -229,7 +241,12 @@ export const dishes: Dish[] = [
       "Sprouted beans are one of India's great plant-protein sources, with vitamins multiplied by sprouting; the toppings add texture, not grease.",
     whyEasyOnDigestion:
       "Well-simmered sprouts are far gentler than un-sprouted pulses, and the tarri (oil layer) is kept deliberately restrained.",
-    image: null,
+    image: "/assets/dishes/maharashtrian-misal.webp",
+    imageCredit: {
+      author: "Ankushkr2020",
+      license: "CC BY-SA 4.0",
+      url: "https://commons.wikimedia.org/wiki/File:Kolhapuri_Misal_Pav.jpg",
+    },
   },
   {
     slug: "paneer-butter-masala",
@@ -255,7 +272,12 @@ export const dishes: Dish[] = [
       "Protein-rich paneer, a lycopene-loaded tomato base, and measured butter — indulgence with a conscience.",
     whyEasyOnDigestion:
       "Mild spicing, no onion-garlic overload, and a strained gravy that is famously gentle — a favourite for kids and elders alike.",
-    image: null,
+    image: "/assets/dishes/paneer-butter-masala.webp",
+    imageCredit: {
+      author: "Gannu03",
+      license: "CC BY-SA 4.0",
+      url: "https://commons.wikimedia.org/wiki/File:Paneer_butter_masala_3.jpg",
+    },
   },
   {
     slug: "thecha-bhaat",
@@ -305,7 +327,12 @@ export const dishes: Dish[] = [
       "Every serving hides three vegetables in the sauce; milk and cheese add calcium and protein for growing kids.",
     whyEasyOnDigestion:
       "No chilli, no cream overload, and a soft texture — gentle on small tummies.",
-    image: null,
+    image: "/assets/dishes/kids-friendly-pasta.webp",
+    imageCredit: {
+      author: "Petar Milošević",
+      license: "CC BY-SA 4.0",
+      url: "https://commons.wikimedia.org/wiki/File:Penne_Arrabbiata.jpg",
+    },
   },
   {
     slug: "bisi-bele-bath",
@@ -330,7 +357,12 @@ export const dishes: Dish[] = [
       "Dal and rice together form a complete protein; vegetables and tamarind add fibre and minerals in one balanced bowl.",
     whyEasyOnDigestion:
       "Well-cooked dal-rice is among the gentlest meals in Indian tradition; hing and ginger in the masala do the digestive heavy-lifting.",
-    image: null,
+    image: "/assets/dishes/bisi-bele-bath.webp",
+    imageCredit: {
+      author: "ManasaRao",
+      license: "CC BY-SA 4.0",
+      url: "https://commons.wikimedia.org/wiki/File:Bisi_Bele_Bath_with_Boondi.jpg",
+    },
   },
   {
     slug: "andhra-veg-biryani",
@@ -356,7 +388,12 @@ export const dishes: Dish[] = [
       "Loaded with vegetables and fresh herbs; curd-based marinade means flavour is built without heavy oil.",
     whyEasyOnDigestion:
       "Mint, curd and raita are built-in coolants; the dum method cooks everything through gently and thoroughly.",
-    image: null,
+    image: "/assets/dishes/andhra-veg-biryani.webp",
+    imageCredit: {
+      author: "Phadke09",
+      license: "CC BY-SA 4.0",
+      url: "https://commons.wikimedia.org/wiki/File:Vegetable_Biryani_IMG_001.jpg",
+    },
   },
 ];
 

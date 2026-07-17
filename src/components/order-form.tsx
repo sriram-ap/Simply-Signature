@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useMemo, useState } from "react";
 import {
   Bike,
@@ -395,11 +396,23 @@ function ItemRow({
         count > 0 && "border-evergreen-700",
       )}
     >
-      <div className="min-w-0">
-        <p className="font-semibold text-evergreen-900">
-          {item.name} <span className="ml-1 text-gold-700">{formatINR(item.price)}</span>
-        </p>
-        <p className="mt-0.5 text-xs leading-relaxed text-ink-soft">{item.detail}</p>
+      <div className="flex min-w-0 items-center gap-3.5">
+        {item.image && (
+          <Image
+            src={item.image}
+            alt=""
+            width={112}
+            height={84}
+            sizes="56px"
+            className="hidden h-14 w-[74px] shrink-0 rounded-lg object-cover sm:block"
+          />
+        )}
+        <div className="min-w-0">
+          <p className="font-semibold text-evergreen-900">
+            {item.name} <span className="ml-1 text-gold-700">{formatINR(item.price)}</span>
+          </p>
+          <p className="mt-0.5 text-xs leading-relaxed text-ink-soft">{item.detail}</p>
+        </div>
       </div>
       <div className="flex shrink-0 items-center gap-1" role="group" aria-label={`${item.name} quantity`}>
         <button

@@ -73,18 +73,34 @@ export default async function DishPage({ params }: Props) {
         </Link>
 
         <div className="mt-6 grid gap-10 lg:grid-cols-[1fr_1.1fr]">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-evergreen-900/10 shadow-card lg:sticky lg:top-24 lg:self-start">
-            {dish.image ? (
-              <Image
-                src={dish.image}
-                alt={dish.name}
-                fill
-                priority
-                sizes="(max-width: 1024px) 100vw, 45vw"
-                className="object-cover"
-              />
-            ) : (
-              <DishVisual dish={dish} />
+          <div className="lg:sticky lg:top-24 lg:self-start">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-evergreen-900/10 shadow-card">
+              {dish.image ? (
+                <Image
+                  src={dish.image}
+                  alt={dish.name}
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 100vw, 45vw"
+                  className="object-cover"
+                />
+              ) : (
+                <DishVisual dish={dish} />
+              )}
+            </div>
+            {dish.image && dish.imageCredit && (
+              <p className="mt-2 text-right text-[11px] text-ink-soft/80">
+                Photo:{" "}
+                <a
+                  href={dish.imageCredit.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline decoration-ink-soft/40 underline-offset-2 hover:text-evergreen-800"
+                >
+                  {dish.imageCredit.author}
+                </a>
+                {` · ${dish.imageCredit.license} · cropped & optimised`}
+              </p>
             )}
           </div>
 

@@ -15,6 +15,8 @@ export interface MenuItem {
   kind: "main" | "addon";
   /** Optional per-order quantity cap (e.g. "max 1 per order"). */
   maxQty?: number;
+  /** Optional thumbnail under /assets/dishes/, shown on the order page. */
+  image?: string;
 }
 
 /** The full weekly configuration — edited by the admin in config/menu.json. */

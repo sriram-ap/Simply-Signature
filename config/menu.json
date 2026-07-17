@@ -25,7 +25,8 @@
       "name": "Main Combo",
       "detail": "Thecha Bhaat + Maharashtrian Misal + 2 Pav",
       "price": 350,
-      "kind": "main"
+      "kind": "main",
+      "image": "/assets/dishes/maharashtrian-misal.webp"
     },
     {
       "id": "thecha-bhaat-500",
@@ -39,14 +40,16 @@
       "name": "Misal + 2 Pav (250 ml)",
       "detail": "Maharashtrian misal with kat and farsan, two soft pav",
       "price": 150,
-      "kind": "addon"
+      "kind": "addon",
+      "image": "/assets/dishes/maharashtrian-misal.webp"
     },
     {
       "id": "buttered-pav",
       "name": "Buttered Pav",
       "detail": "Per piece, toasted golden in butter",
       "price": 20,
-      "kind": "addon"
+      "kind": "addon",
+      "image": "/assets/dishes/buttered-pav.webp"
     }
   ],
   "whatsapp": {

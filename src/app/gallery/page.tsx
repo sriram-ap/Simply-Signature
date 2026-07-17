@@ -60,8 +60,9 @@ export default function GalleryPage() {
           </div>
         )}
         <p className="mt-10 text-center text-sm text-ink-soft">
-          Real photographs of the food are coming as we grow — we&rsquo;d rather show
-          you nothing than show you stock photos.
+          Menu pages currently feature licensed photographs by Wikimedia Commons
+          photographers (credited on each dish page) — photos of our own plates
+          are coming as we grow. We never use AI-generated food imagery.
         </p>
       </section>
     </>
