@@ -12,7 +12,7 @@ export const faqs: Faq[] = [
   {
     question: "How do I place an order?",
     answer:
-      "Use the Order page to build your order and tap 'Order on WhatsApp' — a pre-filled message opens in WhatsApp and you just press send. You can also message Gayathri directly at +91 97658 44659.",
+      "Use the Order page to build your order and tap 'Order on WhatsApp' — a pre-filled message opens in WhatsApp and you just press send. You can also message Gayathri Sriram directly at +91 97658 44659.",
   },
   {
     question: "When do I need to order by?",
@@ -37,7 +37,7 @@ export const faqs: Faq[] = [
   {
     question: "How do I pay?",
     answer:
-      "Payment is settled directly with Gayathri on WhatsApp after you order — UPI or cash on delivery both work. There are no online payments on this website.",
+      "Payment is settled directly with Gayathri Sriram on WhatsApp after you order — UPI or cash on delivery both work. There are no online payments on this website.",
   },
   {
     question: "What if I have an allergy or a spice preference?",

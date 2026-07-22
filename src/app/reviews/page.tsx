@@ -66,7 +66,7 @@ export default function ReviewsPage() {
               <a
                 href={waLink(
                   site.contact.whatsappPrimary.number,
-                  "Hello Gayathri! I tried Simply Signature and wanted to share some feedback: ",
+                  "Hello Gayathri Sriram! I tried Simply Signature and wanted to share some feedback: ",
                 )}
                 target="_blank"
                 rel="noopener noreferrer"

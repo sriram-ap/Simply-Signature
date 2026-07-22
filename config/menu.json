@@ -3,63 +3,116 @@
   "service": {
     "day": "Saturday",
     "meal": "Lunch",
-    "deliveryDate": "2026-07-18",
+    "deliveryDate": "2026-07-25",
     "deliveryWindow": "12:30 PM – 1:30 PM IST",
-    "orderBy": "Friday, 17 July 2026 · 9:00 PM IST"
+    "orderBy": "Friday, 24 July 2026 · 9:00 PM IST"
   },
   "special": {
-    "name": "Thecha Bhaat + Maharashtrian Misal",
-    "shortName": "Thecha Bhaat & Misal Combo",
-    "tagline": "Premium Vegetarian • Home Cooked • Restaurant Relished Experience",
-    "description": "Fiery, hand-pounded green-chilli–garlic thecha folded through ghee-laced rice, alongside a robust Maharashtrian misal crowned with crunchy farsan — finished with two soft pav. Maharashtra's boldest comfort food, made the home way.",
-    "_todo": "POSTER PENDING: export this week's poster as public/assets/posters/2026-07-18-thecha-bhaat-misal.png, then set poster to /assets/posters/2026-07-18-thecha-bhaat-misal.png and fill posterWidth/posterHeight with its pixel size. Pages render a branded text layout until then.",
+    "name": "Sabor Verde — Mexican Special",
+    "shortName": "Sabor Verde Mexican Special",
+    "tagline": "Fresh · Wholesome · Flavorful",
+    "description": "A vegetarian Mexican feast, home-style: flavorful Mexican rice with beans, corn & bell peppers, a silky white cheese broccoli sauce, tandoori-style paneer, classic rajma, a high-fibre stir-fry, and fresh salsa on the side.",
+    "_todo": "POSTER PENDING: export this week's poster as public/assets/posters/2026-07-25-sabor-verde-mexican.png, then set poster to /assets/posters/2026-07-25-sabor-verde-mexican.png and fill posterWidth/posterHeight with its pixel size. Pages render a branded text layout until then.",
     "poster": "",
     "posterAlt": "",
     "posterWidth": 0,
     "posterHeight": 0
   },
-  "portionsNote": "Prepared in limited quantities — only 10–12 portions this week — to maintain freshness and quality.",
+  "portionsNote": "Freshly made in limited quantities — order before Friday night to reserve yours.",
   "items": [
     {
-      "id": "main-combo",
-      "name": "Main Combo",
-      "detail": "Thecha Bhaat + Maharashtrian Misal + 2 Pav",
-      "price": 350,
-      "kind": "main",
-      "image": "/assets/dishes/maharashtrian-misal.webp"
-    },
-    {
-      "id": "thecha-bhaat-500",
-      "name": "Thecha Bhaat (500 ml)",
-      "detail": "Hand-pounded green chilli–garlic thecha rice, 100% vegetarian",
+      "id": "mexican-rice-500",
+      "name": "Mexican Rice (500 ml)",
+      "detail": "Flavorful Mexican rice with beans, corn & bell peppers",
       "price": 200,
       "kind": "addon"
     },
     {
-      "id": "misal-pav-250",
-      "name": "Misal + 2 Pav (250 ml)",
-      "detail": "Maharashtrian misal with kat and farsan, two soft pav",
-      "price": 150,
-      "kind": "addon",
-      "image": "/assets/dishes/maharashtrian-misal.webp"
+      "id": "white-cheese-broccoli-sauce-250",
+      "name": "White Cheese Broccoli Sauce (250 ml)",
+      "detail": "Cheese + Broccoli + Garlic + Onion",
+      "price": 100,
+      "kind": "addon"
     },
     {
-      "id": "buttered-pav",
-      "name": "Buttered Pav",
-      "detail": "Per piece, toasted golden in butter",
-      "price": 20,
+      "id": "tandoori-paneer-60-75",
+      "name": "Tandoori Paneer (60–75 gms)",
+      "detail": "Paneer cubes, tandoori style",
+      "price": 100,
+      "kind": "addon"
+    },
+    {
+      "id": "rajma-250",
+      "name": "Rajma (250 ml)",
+      "detail": "Classic kidney beans in spiced North Indian gravy",
+      "price": 80,
+      "kind": "addon"
+    },
+    {
+      "id": "stir-fry-vegetables-250",
+      "name": "Stir Fry Vegetables (250 ml)",
+      "detail": "High-fibre mix: corn, broccoli, cauliflower, carrot, beans, bell pepper",
+      "price": 100,
+      "kind": "addon"
+    },
+    {
+      "id": "salsa",
+      "name": "Salsa",
+      "detail": "Add-on only — sold only alongside a Mexican Combo, not à la carte",
+      "price": 30,
       "kind": "addon",
-      "image": "/assets/dishes/buttered-pav.webp"
+      "maxQty": 1
     }
   ],
+  "combos": {
+    "note": "All combos include: Mexican Rice + White Cheese Broccoli Sauce + Tandoori Paneer + Rajma + Stir Fry Vegetables + Salsa.",
+    "tiers": [
+      {
+        "id": "starter-meal",
+        "name": "Starter Meal",
+        "price": 350,
+        "serves": "Serves 1",
+        "detail": "350 ml Mexican Rice, all sides 150 ml each, 35 g Paneer, Salsa",
+        "recommended": false,
+        "savings": null
+      },
+      {
+        "id": "simply-signature-meal",
+        "name": "Simply Signature Meal",
+        "price": 450,
+        "serves": "Serves 2",
+        "detail": "500 ml Mexican Rice, all sides 250 ml each, 60–75 g Paneer, Salsa",
+        "recommended": true,
+        "savings": null
+      },
+      {
+        "id": "extra-rice-meal",
+        "name": "Extra Rice Meal",
+        "price": 500,
+        "serves": "Serves 3",
+        "detail": "Everything in the Simply Signature Meal, plus 250 ml extra Mexican Rice",
+        "recommended": false,
+        "savings": null
+      },
+      {
+        "id": "family-saver",
+        "name": "Family Saver",
+        "price": 750,
+        "serves": "Serves 3–4",
+        "detail": "Double the Simply Signature Meal: 2× 500 ml Rice, all sides 500 ml each, 100 g Paneer, Salsa",
+        "recommended": false,
+        "savings": 150
+      }
+    ]
+  },
   "whatsapp": {
     "number": "919765844659",
     "display": "+91 97658 44659",
-    "contactName": "Gayathri"
+    "contactName": "Gayathri Sriram"
   },
   "community": {
     "name": "Jal Vayu Towers (JVT)",
     "flatLabel": "Block / Flat No"
   },
-  "mygateMessage": "🌶️ Simply Signature — Saturday Lunch, 18 July 2026 🌶️\n\nThis week: Thecha Bhaat + Maharashtrian Misal with soft pav — a full Maharashtrian feast.\n\nMain Combo ₹350 (Thecha Bhaat + Misal + 2 Pav)\nThecha Bhaat 500 ml ₹200 · Misal + 2 Pav ₹150 · Buttered Pav ₹20 each\nOnly 10–12 portions this week!\n\n100% vegetarian, homemade in small batches at JVT-343.\nOrder before Friday 9:00 PM on WhatsApp: +91 97658 44659 (Gayathri)\nOr order online: https://simplysignature.in/order\n\nPremium Vegetarian • Home Cooked • Restaurant Relished 💛"
+  "mygateMessage": "🌵 Simply Signature — Sabor Verde Mexican Special, Saturday Lunch, 25 July 2026 🌵\n\nThis week: a vegetarian Mexican feast — Mexican rice with beans, corn & bell peppers, white cheese broccoli sauce, tandoori paneer, rajma, stir-fry vegetables & fresh salsa.\n\nMEXICAN COMBOS (all include rice + sauce + paneer + rajma + stir-fry + salsa):\nStarter Meal ₹350 (serves 1) · Simply Signature Meal ₹450 (serves 2, recommended) · Extra Rice Meal ₹500 (serves 3) · Family Saver ₹750 (serves 3–4, save ₹150)\n\nÀ la carte also available: Mexican Rice ₹200 · White Cheese Broccoli Sauce ₹100 · Tandoori Paneer ₹100 · Rajma ₹80 · Stir Fry Veg ₹100 · Salsa ₹30 (combo add-on only)\n\nFreshly made in limited quantities — 100% vegetarian, homemade at JVT-343.\nOrder before Friday 9:00 PM on WhatsApp: +91 97658 44659 (Gayathri Sriram)\nOr order online: https://simplysignature.in/order\n\nPremium Vegetarian • Home Cooked • Restaurant Relished 💛"
 }

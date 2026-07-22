@@ -24,6 +24,7 @@ export default function HomePage() {
   const menu = weeklyMenu;
   const featured = dishes.slice(0, 3);
   const mainItem = menu.items.find((i) => i.kind === "main");
+  const recommendedCombo = menu.combos?.tiers.find((c) => c.recommended) ?? menu.combos?.tiers[0];
 
   return (
     <>
@@ -161,7 +162,7 @@ export default function HomePage() {
                   <dt className="sr-only">Order by</dt>
                   <dd>Pre-order by {menu.service.orderBy}</dd>
                 </div>
-                {mainItem && (
+                {mainItem ? (
                   <div className="flex items-center gap-2.5">
                     <ChefHat className="size-4 text-gold-400" aria-hidden />
                     <dt className="sr-only">Price</dt>
@@ -169,6 +170,16 @@ export default function HomePage() {
                       {mainItem.name} {formatINR(mainItem.price)} — {mainItem.detail}
                     </dd>
                   </div>
+                ) : (
+                  recommendedCombo && (
+                    <div className="flex items-center gap-2.5">
+                      <ChefHat className="size-4 text-gold-400" aria-hidden />
+                      <dt className="sr-only">Price</dt>
+                      <dd>
+                        {recommendedCombo.name} {formatINR(recommendedCombo.price)} — {recommendedCombo.serves}
+                      </dd>
+                    </div>
+                  )
                 )}
               </dl>
               <p className="mt-4 text-sm italic text-gold-300/90">{menu.portionsNote}</p>
@@ -222,7 +233,7 @@ export default function HomePage() {
             },
             {
               title: "Pre-order on WhatsApp",
-              body: "Build your order here, tap once, and a ready-made WhatsApp message goes to Gayathri. Order before the weekly cut-off.",
+              body: "Build your order here, tap once, and a ready-made WhatsApp message goes to Gayathri Sriram. Order before the weekly cut-off.",
             },
             {
               title: "Fresh to your door",

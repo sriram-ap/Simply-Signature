@@ -115,6 +115,38 @@ export default function SpecialsPage() {
                   <CardTitle>This week&rsquo;s pricing</CardTitle>
                 </CardHeader>
                 <CardContent>
+                  {menu.combos && menu.combos.tiers.length > 0 && (
+                    <>
+                      <p className="mb-1 text-xs font-semibold uppercase tracking-[0.18em] text-terracotta-700">
+                        Mexican Combos
+                      </p>
+                      <p className="mb-3 text-xs leading-relaxed text-ink-soft">{menu.combos.note}</p>
+                      <ul className="divide-y divide-evergreen-900/8">
+                        {menu.combos.tiers.map((combo) => (
+                          <li key={combo.id} className="flex items-baseline justify-between gap-4 py-3 first:pt-0">
+                            <div>
+                              <p className="flex flex-wrap items-center gap-2 text-sm font-semibold text-evergreen-900">
+                                {combo.name}
+                                {combo.recommended && <Badge variant="terracotta">Recommended</Badge>}
+                                {combo.savings ? (
+                                  <Badge variant="gold">Save {formatINR(combo.savings)}</Badge>
+                                ) : null}
+                              </p>
+                              <p className="text-xs text-ink-soft">
+                                {combo.serves} · {combo.detail}
+                              </p>
+                            </div>
+                            <span className="font-display text-lg font-semibold text-evergreen-900 tabular-nums">
+                              {formatINR(combo.price)}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                      <p className="mb-1 mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-gold-700">
+                        À la carte
+                      </p>
+                    </>
+                  )}
                   <ul className="divide-y divide-evergreen-900/8">
                     {menu.items.map((item) => (
                       <li key={item.id} className="flex items-baseline justify-between gap-4 py-3 first:pt-0 last:pb-0">

@@ -6,11 +6,11 @@ export const site = {
   name: "Simply Signature",
   tagline: "Premium Vegetarian • From Gayathri's Kitchen",
   description:
-    "Simply Signature is a premium vegetarian home kitchen by Gayathri, serving small-batch, homestyle weekend meals to the Jal Vayu Towers community. 100% vegetarian, freshly cooked, made with love.",
+    "Simply Signature is a premium vegetarian home kitchen by Gayathri Sriram, serving small-batch, homestyle weekend meals to the Jal Vayu Towers community. 100% vegetarian, freshly cooked, made with love.",
   url: "https://simplysignature.in",
   established: "12 June 2026",
   establishedISO: "2026-06-12",
-  founder: "Gayathri",
+  founder: "Gayathri Sriram",
   location: {
     community: "Jal Vayu Towers (JVT)",
     unit: "JVT — 343",
@@ -20,7 +20,7 @@ export const site = {
     country: "IN",
   },
   contact: {
-    whatsappPrimary: { number: "919765844659", display: "+91 97658 44659", name: "Gayathri" },
+    whatsappPrimary: { number: "919765844659", display: "+91 97658 44659", name: "Gayathri Sriram" },
     whatsappSecondary: { number: "917875153344", display: "+91 78751 53344" },
   },
   serviceDays: [

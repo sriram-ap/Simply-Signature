@@ -19,6 +19,28 @@ export interface MenuItem {
   image?: string;
 }
 
+/** One combo tier bundling several à la carte items at a set price. */
+export interface ComboTier {
+  id: string;
+  name: string;
+  price: number;
+  /** e.g. "Serves 2". */
+  serves: string;
+  /** What's included / portion sizes for this tier. */
+  detail: string;
+  /** Highlight this tier as the recommended choice. */
+  recommended: boolean;
+  /** Amount saved vs. buying items separately, or null if not applicable. */
+  savings: number | null;
+}
+
+/** Combo bundles for the week, with a shared inclusions note. */
+export interface ComboMenu {
+  /** Shared description of what every tier includes. */
+  note: string;
+  tiers: ComboTier[];
+}
+
 /** The full weekly configuration — edited by the admin in config/menu.json. */
 export interface WeeklyMenu {
   /** Master switch: false shows a graceful "orders closed" state. */
@@ -45,6 +67,8 @@ export interface WeeklyMenu {
   };
   portionsNote: string;
   items: MenuItem[];
+  /** Optional combo bundles for the week (e.g. multi-item meal tiers). */
+  combos?: ComboMenu;
   whatsapp: {
     number: string;
     display: string;

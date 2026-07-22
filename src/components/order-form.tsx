@@ -11,7 +11,8 @@ import {
   Plus,
   ShoppingBag,
 } from "lucide-react";
-import type { MenuItem, WeeklyMenu } from "@/lib/menu";
+import type { ComboTier, MenuItem, WeeklyMenu } from "@/lib/menu";
+import { Badge } from "@/components/ui/badge";
 import { cn, formatINR } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -37,10 +38,12 @@ export function OrderForm({
   deliveryLabel: string;
 }) {
   const [qty, setQty] = useState<Record<string, number>>({});
+  const [comboQty, setComboQty] = useState<Record<string, number>>({});
   const [fulfilment, setFulfilment] = useState<Fulfilment>("Delivery");
   const [form, setForm] = useState<FormState>({ name: "", mobile: "", flat: "", remarks: "" });
   const [errors, setErrors] = useState<Partial<Record<keyof FormState | "items", string>>>({});
 
+  const combos = useMemo(() => menu.combos?.tiers ?? [], [menu.combos]);
   const mains = menu.items.filter((i) => i.kind === "main");
   const addons = menu.items.filter((i) => i.kind === "addon");
 
@@ -51,7 +54,16 @@ export function OrderForm({
         .filter((l) => l.count > 0),
     [menu.items, qty],
   );
-  const total = lines.reduce((sum, l) => sum + l.item.price * l.count, 0);
+  const comboLines = useMemo(
+    () =>
+      combos
+        .map((combo) => ({ combo, count: comboQty[combo.id] ?? 0 }))
+        .filter((l) => l.count > 0),
+    [combos, comboQty],
+  );
+  const itemsTotal = lines.reduce((sum, l) => sum + l.item.price * l.count, 0);
+  const combosTotal = comboLines.reduce((sum, l) => sum + l.combo.price * l.count, 0);
+  const total = itemsTotal + combosTotal;
 
   function change(item: MenuItem, delta: number) {
     setQty((q) => {
@@ -62,6 +74,11 @@ export function OrderForm({
     setErrors((e) => ({ ...e, items: undefined }));
   }
 
+  function changeCombo(combo: ComboTier, delta: number) {
+    setComboQty((q) => ({ ...q, [combo.id]: Math.max(0, (q[combo.id] ?? 0) + delta) }));
+    setErrors((e) => ({ ...e, items: undefined }));
+  }
+
   function set<K extends keyof FormState>(key: K, value: string) {
     setForm((f) => ({ ...f, [key]: value }));
     setErrors((e) => ({ ...e, [key]: undefined }));
@@ -69,7 +86,7 @@ export function OrderForm({
 
   function validate(): boolean {
     const next: typeof errors = {};
-    if (total === 0) next.items = "Please add at least one item to your order.";
+    if (total === 0) next.items = "Please add at least one combo or item to your order.";
     if (!form.name.trim()) next.name = "Please enter your name.";
     if (!/^[6-9]\d{9}$/.test(form.mobile.trim()))
       next.mobile = "Please enter a valid 10-digit mobile number.";
@@ -79,9 +96,13 @@ export function OrderForm({
   }
 
   function buildMessage(): string {
-    const itemLines = lines
-      .map((l) => `• ${l.item.name} × ${l.count} — ${formatINR(l.item.price * l.count)}`)
-      .join("\n");
+    const comboMsgLines = comboLines.map(
+      (l) => `• ${l.combo.name} (${l.combo.serves}) × ${l.count} — ${formatINR(l.combo.price * l.count)}`,
+    );
+    const itemMsgLines = lines.map(
+      (l) => `• ${l.item.name} × ${l.count} — ${formatINR(l.item.price * l.count)}`,
+    );
+    const itemLines = [...comboMsgLines, ...itemMsgLines].join("\n");
     return [
       `Hello ${menu.whatsapp.contactName}! I'd like to place an order with Simply Signature. 🌿`,
       "",
@@ -160,6 +181,27 @@ export function OrderForm({
             </span>
           </p>
 
+          {combos.length > 0 && (
+            <>
+              <h3 className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-terracotta-700">
+                Mexican Combos
+              </h3>
+              {menu.combos?.note && (
+                <p className="mb-3 text-xs leading-relaxed text-ink-soft">{menu.combos.note}</p>
+              )}
+              <div className="space-y-3">
+                {combos.map((combo) => (
+                  <ComboRow
+                    key={combo.id}
+                    combo={combo}
+                    count={comboQty[combo.id] ?? 0}
+                    onChange={changeCombo}
+                  />
+                ))}
+              </div>
+            </>
+          )}
+
           <div className="space-y-3">
             {mains.map((item) => (
               <ItemRow key={item.id} item={item} count={qty[item.id] ?? 0} onChange={change} featured />
@@ -169,7 +211,7 @@ export function OrderForm({
           {addons.length > 0 && (
             <>
               <h3 className="mb-3 mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-gold-700">
-                Add-ons
+                À la carte
               </h3>
               <div className="space-y-3">
                 {addons.map((item) => (
@@ -316,12 +358,24 @@ export function OrderForm({
             </p>
           </CardHeader>
           <CardContent className="space-y-4">
-            {lines.length === 0 ? (
+            {comboLines.length === 0 && lines.length === 0 ? (
               <p className="rounded-xl bg-cream-deep/60 p-4 text-sm text-ink-soft">
-                Nothing here yet — add the {mains[0]?.name ?? "main item"} to begin.
+                Nothing here yet — add the{" "}
+                {combos.find((c) => c.recommended)?.name ?? mains[0]?.name ?? "Simply Signature Meal"} to
+                begin.
               </p>
             ) : (
               <ul className="space-y-2.5">
+                {comboLines.map((l) => (
+                  <li key={l.combo.id} className="flex items-baseline justify-between gap-3 text-sm">
+                    <span className="text-ink">
+                      {l.combo.name} <span className="text-ink-soft">× {l.count}</span>
+                    </span>
+                    <span className="font-semibold text-evergreen-900 tabular-nums">
+                      {formatINR(l.combo.price * l.count)}
+                    </span>
+                  </li>
+                ))}
                 {lines.map((l) => (
                   <li key={l.item.id} className="flex items-baseline justify-between gap-3 text-sm">
                     <span className="text-ink">
@@ -370,6 +424,61 @@ export function OrderForm({
           </CardContent>
         </Card>
       </aside>
+    </div>
+  );
+}
+
+function ComboRow({
+  combo,
+  count,
+  onChange,
+}: {
+  combo: ComboTier;
+  count: number;
+  onChange: (combo: ComboTier, delta: number) => void;
+}) {
+  return (
+    <div
+      className={cn(
+        "flex items-center justify-between gap-4 rounded-xl border p-4 transition-colors",
+        combo.recommended ? "border-terracotta-500/50 bg-terracotta-500/8" : "border-evergreen-900/10 bg-white",
+        count > 0 && "border-evergreen-700",
+      )}
+    >
+      <div className="min-w-0">
+        <div className="flex flex-wrap items-center gap-2">
+          <p className="font-semibold text-evergreen-900">
+            {combo.name} <span className="ml-1 text-gold-700">{formatINR(combo.price)}</span>
+          </p>
+          {combo.recommended && <Badge variant="terracotta">Recommended</Badge>}
+          {combo.savings ? <Badge variant="gold">Save {formatINR(combo.savings)}</Badge> : null}
+        </div>
+        <p className="mt-0.5 text-xs leading-relaxed text-ink-soft">
+          {combo.serves} · {combo.detail}
+        </p>
+      </div>
+      <div className="flex shrink-0 items-center gap-1" role="group" aria-label={`${combo.name} quantity`}>
+        <button
+          type="button"
+          onClick={() => onChange(combo, -1)}
+          disabled={count === 0}
+          aria-label={`Decrease ${combo.name}`}
+          className="inline-flex size-9 items-center justify-center rounded-full border border-evergreen-900/15 bg-white text-evergreen-900 transition-colors hover:border-evergreen-600 disabled:opacity-35 disabled:hover:border-evergreen-900/15"
+        >
+          <Minus className="size-4" aria-hidden />
+        </button>
+        <span className="w-8 text-center text-base font-semibold text-evergreen-900 tabular-nums" aria-live="polite">
+          {count}
+        </span>
+        <button
+          type="button"
+          onClick={() => onChange(combo, +1)}
+          aria-label={`Increase ${combo.name}`}
+          className="inline-flex size-9 items-center justify-center rounded-full bg-evergreen-900 text-cream transition-colors hover:bg-evergreen-800"
+        >
+          <Plus className="size-4" aria-hidden />
+        </button>
+      </div>
     </div>
   );
 }

@@ -73,7 +73,7 @@ export default function MenuPage() {
               Have a favourite from this list?
             </h2>
             <p className="mx-auto mt-3 max-w-md text-sm leading-relaxed text-cream/75">
-              Tell Gayathri on WhatsApp — weekly specials are often chosen by
+              Tell Gayathri Sriram on WhatsApp — weekly specials are often chosen by
               neighbourly demand.
             </p>
             <Link

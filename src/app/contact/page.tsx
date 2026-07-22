@@ -8,8 +8,7 @@ import { site, waLink } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description:
-    "Reach Simply Signature on WhatsApp: +91 97658 44659 (Gayathri). Located at JVT-343, Jal Vayu Towers. Weekend pre-orders only.",
+  description: `Reach Simply Signature on WhatsApp: +91 97658 44659 (${site.founder}). Located at JVT-343, Jal Vayu Towers. Weekend pre-orders only.`,
   alternates: { canonical: "/contact" },
 };
 
